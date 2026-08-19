@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memoir - ShimmerOS</title>
+    <link rel="stylesheet" href="../../assets/css/themes.css">
+    <link rel="stylesheet" href="../../assets/css/base.css">
+    <link rel="stylesheet" href="../../assets/css/memoir.css">
+    <script>
+        const savedTheme = localStorage.getItem('ShimmerOS_theme') || 'lavender-light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+<body>
+    <!-- MENU BAR -->
+    <div class="menu-bar">
+        <div class="menu-left">
+            <span class="menu-logo">📔</span>
+            <span class="menu-item">Memoir</span>
+            <span class="menu-item">Entries</span>
+            <span class="menu-item">Feelings</span>
+            <span class="menu-item">Search</span>
+        </div>
+        <div class="menu-right">
+            <span class="menu-icon" id="menuTime">Loading...</span>
+            <span class="menu-icon" onclick="window.location.href='../../home/index.html'">🏠</span>
+        </div>
+    </div>
+
+    <!-- MAIN WINDOW -->
+    <div class="window" style="width: 1100px; max-height: 85vh;">
+        <div class="window-bar">
+            <div class="window-controls">
+                <button class="control-btn close" onclick="window.location.href='../../home/index.html'"></button>
+                <button class="control-btn minimize"></button>
+                <button class="control-btn maximize"></button>
+            </div>
+            <span class="window-title">Memoir - Your Emotional Space</span>
+        </div>
+
+        <div class="app-content">
+            <!-- LAYOUT -->
+            <div class="memoir-layout">
+                
+                <!-- LEFT SIDEBAR -->
+                <div class="sidebar">
+                    <div class="sidebar-header">
+                        <h2 class="app-title">memoir</h2>
+                        <p class="app-tagline">your thoughts, your feelings, your story</p>
+                    </div>
+
+                    <button class="new-entry-btn" onclick="alert('New entry feature coming soon!  💙')">
+                        <span>✍️</span>
+                        <span>new entry</span>
+                    </button>
+
+                    <div class="stats-card">
+                        <div class="stat-item">
+                            <span class="stat-number" id="totalEntries">--</span>
+                            <span class="stat-label">total entries</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="thisMonth">--</span>
+                            <span class="stat-label">this month</span>
+                        </div>
+                    </div>
+
+                    <div class="mood-overview">
+                        <h4 class="section-heading">recent moods</h4>
+                        <div class="mood-list" id="moodList">
+                            <p class="loading-text">loading...</p>
+                        </div>
+                    </div>
+
+                    <div class="tags-cloud">
+                        <h4 class="section-heading">tags</h4>
+                        <div class="tags-container" id="tagsContainer">
+                            <p class="loading-text">loading...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MAIN CONTENT -->
+                <div class="main-content">
+                    <!-- ENTRIES GRID -->
+                    <div class="entries-header">
+                        <h3 class="entries-title">your entries</h3>
+                        <select class="filter-select" id="moodFilter">
+                            <option value="all">all moods</option>
+                            <option value="anxious">anxious</option>
+                            <option value="accomplished">accomplished</option>
+                            <option value="reflective">reflective</option>
+                            <option value="hopeful">hopeful</option>
+                        </select>
+                    </div>
+
+                    <div class="entries-grid" id="entriesGrid">
+                        <p class="loading-text">loading entries...</p>
+                    </div>
+                </div>
+
+                <!-- RIGHT PANEL (ENTRY DETAIL) -->
+                <div class="detail-panel" id="detailPanel">
+                    <div class="detail-placeholder">
+                        <div class="placeholder-icon">📖</div>
+                        <p>select an entry to read</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/themes.js"></script>
+    <script src="../../assets/js/memoir.js"></script>
+</body>
+</html>

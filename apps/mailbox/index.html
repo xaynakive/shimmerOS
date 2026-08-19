@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShimmerOS > Mailbox</title>
+  <link rel="stylesheet" href="../../assets/css/themes.css"> 
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/mailbox.css">
+  <script>
+    // Load saved theme
+    const savedTheme = localStorage.getItem('ShimmerOS_theme') || 'lavender-light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</head>
+<body>
+    <!-- MENU BAR -->
+    <div class="menu-bar">
+        <div class="menu-left">
+            <span class="menu-logo">💌</span>
+            <span class="menu-item">Mailbox</span>
+            <span class="menu-item">File</span>
+            <span class="menu-item">Edit</span>
+            <span class="menu-item">View</span>
+            <span class="menu-item">Window</span>
+            <span class="menu-item">Help</span>
+        </div>
+        <div class="menu-right">
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/butterfly.png" class="menu-img" alt="Butterfly"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/battery-empty.png" class="menu-img" alt="Battery"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/wifi-high.png" class="menu-img" alt="WiFi"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/bluetooth.png" class="menu-img" alt="Bluetooth"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/heart.png" class="menu-img" alt="Heart"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/user-circle.png" class="menu-img" alt="User"></span>
+            <span class="menu-icon" id="menuTime">Loading...</span>
+        </div>
+    </div>
+
+      <!-- mailbox WINDOW -->
+    <div class="window">
+      <!-- Window title bar -->
+      <div class="window-bar">
+        <div class="window-controls">
+          <button class="control-btn close" onclick="window.location.href='../../home/index.html'" title="Close"></button>
+          <button class="control-btn minimize" title="Minimize"></button>
+          <button class="control-btn maximize" title="Maximize"></button>
+        </div>
+        <div class="window-title">mailbox</div>
+      </div>
+
+        <div class="app-container">
+        
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+          <h2 class="sidebar-title">Mailbox</h2>
+          
+          <button class="new-letter-btn" id="newLetterBtn">
+            Write New Letter
+          </button>
+
+          <div class="letters-count" id="lettersCount">
+            0 letters saved
+          </div>
+
+          <div class="saved-letters-list" id="savedLettersList">
+            <!-- Saved letters will appear here -->
+          </div>
+        </div>
+
+        <!-- MAIN CONTENT AREA -->
+        <div class="main-content">
+          
+          <!-- WELCOME SCREEN (shown when no letter is active) -->
+          <div class="welcome-screen" id="welcomeScreen">
+            <div class="welcome-icon">💌</div>
+            <h1 class="welcome-title">mailbox</h1>
+            <p class="welcome-text">Write heartfelt letters, seal them with love, and keep them forever.</p>
+            <button class="welcome-btn" onclick="document.getElementById('newLetterBtn').click()">
+              Write Your First Letter
+            </button>
+          </div>
+
+          <!-- WRITE LETTER VIEW -->
+          <div class="write-view hidden" id="writeView">
+            <div class="paper-theme-selector">
+              <span class="theme-label">Paper Theme:</span>
+              <button class="theme-btn active" data-theme="vintage">Vintage</button>
+              <button class="theme-btn" data-theme="floral">Floral</button>
+              <button class="theme-btn" data-theme="lavender">Lavender</button>
+              <button class="theme-btn" data-theme="rose">Rose</button>
+            </div>
+
+            <div class="letter-paper vintage" id="letterPaper">
+              <div class="paper-header">
+                <input type="text" 
+                       class="letter-recipient" 
+                       id="letterRecipient" 
+                       placeholder="To:  Myself"
+                       maxlength="50">
+                <div class="letter-date" id="letterDate"></div>
+              </div>
+
+              <textarea class="letter-content" 
+                        id="letterContent" 
+                        placeholder="Start writing your letter here... Write from your heart. This is your private space.
+                        "></textarea>
+
+              <div class="paper-footer">
+                <input type="text" 
+                       class="letter-signature" 
+                       id="letterSignature" 
+                       placeholder="Anonymous"
+                       maxlength="30">
+              </div>
+            </div>
+
+            <div class="write-actions">
+              <button class="action-btn cancel-btn" id="cancelBtn">
+                Cancel
+              </button>
+              <button class="action-btn save-btn" id="saveBtn">
+                <span class="btn-icon">💌</span>
+                Seal & Save Letter
+              </button>
+            </div>
+          </div>
+
+          <!-- READ LETTER VIEW -->
+          <div class="read-view hidden" id="readView">
+            <!-- Envelope (closed) -->
+            <div class="envelope-container" id="envelopeContainer">
+              <div class="envelope">
+                <div class="envelope-flap"></div>
+                <div class="envelope-body">
+                  <div class="envelope-to" id="envelopeTo">To: My Dearest</div>
+                  <div class="wax-seal">
+                    <div class="seal-letter" id="sealLetter">L</div>
+                  </div>
+                </div>
+              </div>
+              <button class="open-btn" id="openEnvelopeBtn">
+                Click to Open
+              </button>
+            </div>
+
+            <!-- Opened Letter -->
+            <div class="opened-letter hidden" id="openedLetter">
+              <div class="letter-paper-read" id="letterPaperRead">
+                <div class="paper-header">
+                  <div class="letter-recipient-read" id="letterRecipientRead"></div>
+                  <div class="letter-date-read" id="letterDateRead"></div>
+                </div>
+
+                <div class="letter-content-read" id="letterContentRead"></div>
+
+                <div class="paper-footer">
+                  <div class="letter-signature-read" id="letterSignatureRead"></div>
+                </div>
+              </div>
+
+              <div class="read-actions">
+                <button class="action-btn delete-btn" id="deleteBtn">
+                  Delete Letter
+                </button>
+                <button class="action-btn close-letter-btn" id="closeLetterBtn">
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  <script src="../../assets/js/mailbox.js"></script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+/* ========================================
+   LOGIN SCREEN - ShimmerOS (THEME-AWARE)
+   ======================================== */
+.login {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-family: 'Mali';
+}
+
+/* ========================================
+   BACKGROUND
+   ======================================== */
+.login-bg {
+  position:  absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    var(--bg-gradient-start) 0%, 
+    var(--bg-gradient-mid) 50%, 
+    var(--bg-gradient-end) 100%
+  );
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+/* Add blur overlay */
+.login-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(60px);
+  -webkit-backdrop-filter: blur(60px);
+}
+
+/* ========================================
+   LOGIN BOX
+   ======================================== */
+.login-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  z-index: 10;
+  animation: fadeIn 0.5s ease;
+  width: min(430px, calc(100vw - 32px));
+  padding: 28px 24px;
+  border: 1px solid var(--widget-border);
+  border-radius: 24px;
+  background: color-mix(in srgb, var(--widget-bg) 82%, transparent);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  box-shadow: var(--shadow-lg);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   PROFILE PICTURE
+   ======================================== */
+.pfp {
+  width: 120px;
+  height: 120px;
+  border-radius:  50%;
+  object-fit: cover;
+  border: 4px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+}
+
+/* ========================================
+   USERNAME
+   ======================================== */
+.username {
+  font-size:  20px;
+  font-weight:  500;
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  letter-spacing: 0.3px;
+}
+
+/* ========================================
+   PASSWORD CONTAINER (3-PART LAYOUT)
+   ======================================== */
+.password-container {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 10px;
+}
+
+.back-btn,
+.hint-btn {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.back-btn {
+  border-radius: 10px 0 0 10px;
+  border-right: none;
+}
+
+.hint-btn {
+  border-radius: 0 10px 10px 0;
+  border-left: none;
+}
+
+.back-btn:hover,
+.hint-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+.back-btn:active,
+.hint-btn:active {
+  transform: scale(0.95);
+}
+
+/* ========================================
+   PASSWORD INPUT (CENTER)
+   ======================================== */
+.password-input {
+  width: 280px;
+  height: 50px;
+  padding: 0 20px;
+  background:  rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-left: none;
+  border-right: none;
+  font-size: 16px;
+  font-weight:  500;
+  color: white;
+  text-align: center;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  font-family: 'Inter', sans-serif;
+}
+
+.password-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+}
+
+.password-input:focus {
+  background:  rgba(255, 255, 255, 0.25);
+}
+
+/* ========================================
+   ENTER BUTTON
+   ======================================== */
+.enter-btn {
+  width: 380px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight:  600;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  font-family: 'Inter', sans-serif;
+  margin-top: 10px;
+}
+
+.enter-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.enter-btn:active {
+  transform: translateY(0);
+}
+
+.login-help,
+.login-status {
+  width: 100%;
+  min-height: 1.4em;
+  color: var(--text-secondary);
+  text-align: center;
+  font-size: 12px;
+}
+
+
+.login-status {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ========================================
+   SHAKE ANIMATION (WRONG PASSWORD)
+   ======================================== */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+.shake {
+  animation: shake 0.4s ease;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+  .pfp {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .password-input {
+    width: 220px;
+  }
+  
+  .enter-btn {
+    width: 320px;
+  }
+}

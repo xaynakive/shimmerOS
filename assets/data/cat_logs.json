@@ -1,0 +1,194 @@
+{
+  "user":  "xayna",
+  "logs": [
+    {
+      "date": "2025-01-04",
+      "day": "Saturday",
+      "mood": "tired but determined",
+      "energy": 3,
+      "sleep": {
+        "hours": 4,
+        "quality": "poor",
+        "woke_up_at": "10:30 AM"
+      },
+      "meals": [
+        {
+          "time": "12:00 PM",
+          "food": "ramen with red chili",
+          "notes": "spicy craving again"
+        },
+        {
+          "time": "6:00 PM",
+          "food": "ramen with extra red chili",
+          "notes":  "why do i do this to myself"
+        },
+        {
+          "time":  "11:00 PM",
+          "food": "instant noodles",
+          "notes":  "coding fuel"
+        }
+      ],
+      "symptoms": [
+        {
+          "type": "stomach pain",
+          "severity": "moderate",
+          "cause": "too much spicy food again",
+          "time": "7:30 PM"
+        }
+      ],
+      "activities": [
+        {
+          "time": "11:00 AM - 3:00 PM",
+          "activity": "worked on portfolio assignment",
+          "mood": "focused"
+        },
+        {
+          "time": "3:00 PM - 5:00 PM",
+          "activity": "Echoura dashboard coding",
+          "mood": "stressed about deadline"
+        },
+        {
+          "time": "8:00 PM - 11:00 PM",
+          "activity": "feedback form design",
+          "mood": "getting there"
+        }
+      ],
+      "academic": {
+        "assignments_completed": 1,
+        "assignments_pending":  2,
+        "stress_level": 7
+      },
+      "notes": "need to stop eating spicy ramen every day.  also running on 4 hours of sleep.  presentation tomorrow, gotta finish apps + json files."
+    },
+    {
+      "date": "2025-01-03",
+      "day": "Friday",
+      "mood": "exhausted but productive",
+      "energy": 4,
+      "sleep": {
+        "hours": 5,
+        "quality": "okay",
+        "woke_up_at": "9:00 AM"
+      },
+      "meals": [
+        {
+          "time": "10:30 AM",
+          "food":  "coffee",
+          "notes": "survival juice"
+        },
+        {
+          "time": "2:00 PM",
+          "food": "ramen with red chili",
+          "notes":  "the usual"
+        },
+        {
+          "time": "9:00 PM",
+          "food": "leftover ramen",
+          "notes": "too lazy to cook"
+        }
+      ],
+      "symptoms": [
+        {
+          "type": "stomach ache",
+          "severity": "mild",
+          "cause": "spicy food + stress",
+          "time": "10:00 PM"
+        },
+        {
+          "type":  "headache",
+          "severity": "mild",
+          "cause": "screen time + lack of sleep",
+          "time":  "11:30 PM"
+        }
+      ],
+      "activities": [
+        {
+          "time": "9:30 AM - 1:00 PM",
+          "activity":  "breeze documentation writing",
+          "mood": "determined at 5am vibes"
+        },
+        {
+          "time": "2:00 PM - 6:00 PM",
+          "activity": "Echoura portal design",
+          "mood": "in the zone"
+        },
+        {
+          "time": "7:00 PM - 12:00 AM",
+          "activity": "3D cube portfolio hero section",
+          "mood": "obsessed with glassmorphism"
+        }
+      ],
+      "academic": {
+        "assignments_completed": 2,
+        "assignments_pending":  3,
+        "stress_level":  8
+      },
+      "notes":  "completed 30+ page breeze documentation at 5am. currently recovering.  also stomach hurts from all the spicy food but can't stop eating it."
+    },
+    {
+      "date": "2025-01-02",
+      "day":  "Thursday",
+      "mood":  "stressed but managing",
+      "energy": 5,
+      "sleep": {
+        "hours": 6,
+        "quality": "decent",
+        "woke_up_at": "8:30 AM"
+      },
+      "meals": [
+        {
+          "time": "9:00 AM",
+          "food": "toast and tea",
+          "notes": "trying to be healthy"
+        },
+        {
+          "time": "1:00 PM",
+          "food": "ramen with red chili",
+          "notes": "lasted 4 hours before giving in"
+        },
+        {
+          "time": "8:00 PM",
+          "food": "spicy instant noodles",
+          "notes": "comfort food"
+        }
+      ],
+      "symptoms": [
+        {
+          "type": "stomach discomfort",
+          "severity":  "moderate",
+          "cause":  "ate spicy ramen twice today",
+          "time": "9:30 PM"
+        }
+      ],
+      "activities":  [
+        {
+          "time": "9:00 AM - 12:00 PM",
+          "activity": "Echoura classes",
+          "mood": "focused"
+        },
+        {
+          "time": "1:00 PM - 5:00 PM",
+          "activity": "ShimmerOS app planning",
+          "mood": "creative"
+        },
+        {
+          "time": "6:00 PM - 11:00 PM",
+          "activity": "portfolio website coding",
+          "mood": "in the flow"
+        }, 
+        {
+        "time":  "6:00 PM - 7:00 PM",
+        "activity": "posted on lemonure about coding + ramen",
+        "mood": "chaotic but creative",
+        "social_media_time": "45 minutes"
+        }
+      ],
+      "academic": {
+        "assignments_completed": 1,
+        "assignments_pending": 4,
+        "stress_level":  6
+      },
+      "notes": "finals week approaching. need to finish multiple projects. keep eating spicy food despite stomach issues. clearly have a problem."
+    }
+  ]
+}

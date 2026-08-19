@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echoura Portal - ShimmerOS</title>
+    <link rel="stylesheet" href="../../assets/css/themes.css">
+    <link rel="stylesheet" href="../../assets/css/base.css">
+    <link rel="stylesheet" href="../../assets/css/echoura.css">
+    <script>
+        const savedTheme = localStorage.getItem('ShimmerOS_theme') || 'lavender-light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+<body>
+    <!-- MENU BAR -->
+    <div class="menu-bar">
+        <div class="menu-left">
+            <span class="menu-logo">🏫</span>
+            <span class="menu-item">Echoura</span>
+            <span class="menu-item">Edit</span>
+            <span class="menu-item">View</span>
+            <span class="menu-item">Window</span>
+            <span class="menu-item">Help</span>
+        </div>
+        <div class="menu-right">
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/butterfly.png" class="menu-img" alt="Butterfly"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/battery-empty.png" class="menu-img" alt="Battery"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/wifi-high.png" class="menu-img" alt="WiFi"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/bluetooth.png" class="menu-img" alt="Bluetooth"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/heart.png" class="menu-img" alt="Heart"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/user-circle.png" class="menu-img" alt="User"></span>
+            <span class="menu-icon" id="menuTime">Loading...</span>
+        </div>
+    </div>
+
+    <!-- LOGIN WINDOW -->
+    <div class="window" style="width: 500px; height: auto;">
+        <div class="window-bar">
+            <div class="window-controls">
+                <button class="control-btn close" onclick="window.location.href='../../home/index.html'"></button>
+                <button class="control-btn minimize"></button>
+                <button class="control-btn maximize"></button>
+            </div>
+            <span class="window-title">Echoura Student Portal</span>
+        </div>
+
+        <div class="login-content">
+            <div class="login-header">
+                <div class="student-avatar"><img src="../../assets/imgs/userdata/hamster.gif" style="height: 100px;"></div>
+                <h2 class="Echoura-title">Echoura</h2>
+                <p class="Echoura-subtitle">Where every cats aura echoes in the sunbeam</p>
+            </div>
+
+            <form class="login-form" id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="studentId" class="form-label">student id</label>
+                    <input 
+                        type="text" 
+                        id="studentId" 
+                        class="form-input" 
+                        placeholder="AR-AdmDate-Year-StudentNo"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">password</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        class="form-input" 
+                        placeholder="••••••••••"
+                        required
+                    >
+                </div>
+
+                <div class="form-hint">
+                    <p>hint: student id is <strong>AR-08-26-42069</strong>, password is <strong>catcatcat</strong></p>
+                </div>
+
+                <button type="submit" class="login-btn">
+                    sign in →
+                </button>
+            </form>
+
+            <div class="login-footer">
+                <p>powered by ShimmerOS • secure student access</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/echoura/login.js"></script>
+</body>
+</html>

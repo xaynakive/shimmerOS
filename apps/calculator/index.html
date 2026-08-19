@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShimmerOS > Scientific Calculator</title>
+  <link rel="stylesheet" href="../../assets/css/themes.css"> 
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/calculator.css">
+  <script>
+    // Load saved theme
+    const savedTheme = localStorage.getItem('ShimmerOS_theme') || 'lavender-light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</head>
+<body>
+    <!-- MENU BAR -->
+    <div class="menu-bar">
+        <div class="menu-left">
+            <span class="menu-logo">🧮</span>
+            <span class="menu-item">Calculator</span>
+            <span class="menu-item">Edit</span>
+            <span class="menu-item">View</span>
+            <span class="menu-item">Window</span>
+            <span class="menu-item">Help</span>
+        </div>
+        <div class="menu-right">
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/butterfly.png" class="menu-img" alt="Butterfly"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/battery-empty.png" class="menu-img" alt="Battery"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/wifi-high.png" class="menu-img" alt="WiFi"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/bluetooth.png" class="menu-img" alt="Bluetooth"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/heart.png" class="menu-img" alt="Heart"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/user-circle.png" class="menu-img" alt="User"></span>
+            <span class="menu-icon" id="menuTime">Loading...</span>
+        </div>
+    </div>
+
+    <!-- CALCULATOR WINDOW -->
+    <div class="window">
+      <!-- Window title bar -->
+      <div class="window-bar">
+        <div class="window-controls">
+          <button class="control-btn close" onclick="window.location.href='../../home/index.html'" title="Close"></button>
+          <button class="control-btn minimize" title="Minimize"></button>
+          <button class="control-btn maximize" id="maximizeBtn" title="Maximize"></button>
+        </div>
+        <div class="window-title">Scientific Calculator</div>
+      </div>
+
+      <!-- Calculator body -->
+      <div class="calculator">
+        <!-- Display -->
+        <div class="display-container">
+          <div id="history" class="history"></div>
+          <div id="display" class="display">0</div>
+        </div>
+
+        <!-- Mode Toggle -->
+        <div class="mode-toggle">
+          <button id="degBtn" class="mode-btn active">DEG</button>
+          <button id="radBtn" class="mode-btn">RAD</button>
+          <div class="memory-display" id="memoryDisplay"></div>
+        </div>
+
+        <!-- Main Calculator Grid -->
+        <div class="calc-grid">
+          
+          <!-- SCIENTIFIC FUNCTIONS (Left Column) -->
+          <div class="scientific-section">
+            <h3 class="section-title">Scientific</h3>
+            
+            <button class="btn sci-btn" data-func="sin">sin</button>
+            <button class="btn sci-btn" data-func="cos">cos</button>
+            <button class="btn sci-btn" data-func="tan">tan</button>
+            
+            <button class="btn sci-btn" data-func="asin">sin⁻¹</button>
+            <button class="btn sci-btn" data-func="acos">cos⁻¹</button>
+            <button class="btn sci-btn" data-func="atan">tan⁻¹</button>
+            
+            <button class="btn sci-btn" data-func="ln">ln</button>
+            <button class="btn sci-btn" data-func="log">log</button>
+            <button class="btn sci-btn" data-func="exp">e^x</button>
+            
+            <button class="btn sci-btn" data-func="pow10">10^x</button>
+            <button class="btn sci-btn" data-func="sqrt">√</button>
+            <button class="btn sci-btn" data-func="cbrt">∛</button>
+            
+            <button class="btn sci-btn" data-func="square">x²</button>
+            <button class="btn sci-btn" data-func="cube">x³</button>
+            <button class="btn sci-btn" data-func="power">x^y</button>
+            
+            <button class="btn sci-btn" data-func="factorial">x! </button>
+            <button class="btn sci-btn" data-func="abs">|x|</button>
+            <button class="btn sci-btn" data-func="pi">π</button>
+            
+            <button class="btn sci-btn" data-func="e">e</button>
+            <button class="btn sci-btn" data-func="percent">%</button>
+            <button class="btn sci-btn" data-func="reciprocal">1/x</button>
+          </div>
+
+          <!-- BASIC OPERATIONS (Center Column) -->
+          <div class="basic-section">
+            <h3 class="section-title">Basic</h3>
+            
+            <div class="basic-buttons">
+              <!-- Row 1 -->
+              <button class="btn clear-btn" id="ac">AC</button>
+              <button class="btn clear-btn" id="ce">CE</button>
+              <button class="btn op-btn" id="backspace">⌫</button>
+              <button class="btn op-btn" data-value="/">÷</button>
+              
+              <!-- Row 2 -->
+              <button class="btn num-btn" data-value="7">7</button>
+              <button class="btn num-btn" data-value="8">8</button>
+              <button class="btn num-btn" data-value="9">9</button>
+              <button class="btn op-btn" data-value="*">×</button>
+              
+              <!-- Row 3 -->
+              <button class="btn num-btn" data-value="4">4</button>
+              <button class="btn num-btn" data-value="5">5</button>
+              <button class="btn num-btn" data-value="6">6</button>
+              <button class="btn op-btn" data-value="-">−</button>
+              
+              <!-- Row 4 -->
+              <button class="btn num-btn" data-value="1">1</button>
+              <button class="btn num-btn" data-value="2">2</button>
+              <button class="btn num-btn" data-value="3">3</button>
+              <button class="btn op-btn" data-value="+">+</button>
+              
+              <!-- Row 5 -->
+              <button class="btn num-btn" data-value="0" style="grid-column: span 2;">0</button>
+              <button class="btn num-btn" data-value=".">.</button>
+              <button class="btn equal-btn" id="equals">=</button>
+            </div>
+          </div>
+
+          <!-- MEMORY & ADVANCED (Right Column) -->
+          <div class="memory-section">
+            <h3 class="section-title">Memory</h3>
+            
+            <button class="btn mem-btn" id="mc">MC</button>
+            <button class="btn mem-btn" id="mr">MR</button>
+            <button class="btn mem-btn" id="mplus">M+</button>
+            <button class="btn mem-btn" id="mminus">M−</button>
+            
+            <h3 class="section-title" style="margin-top: 15px;">Advanced</h3>
+            
+            <button class="btn adv-btn" data-func="sinh">sinh</button>
+            <button class="btn adv-btn" data-func="cosh">cosh</button>
+            <button class="btn adv-btn" data-func="tanh">tanh</button>
+            
+            <button class="btn adv-btn" data-func="nPr">nPr</button>
+            <button class="btn adv-btn" data-func="nCr">nCr</button>
+            <button class="btn adv-btn" data-func="rand">rand</button>
+            
+            <button class="btn adv-btn" data-func="leftParen">(</button>
+            <button class="btn adv-btn" data-func="rightParen">)</button>
+            <button class="btn adv-btn" data-func="mod">mod</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  <script src="../../assets/js/calculator.js"></script>
+</body>
+</html>

@@ -1,0 +1,859 @@
+/* ========================================
+   ShimmerOS COMPLETE THEME SYSTEM
+   ======================================== */
+
+/* ========================================
+   💜 LAVENDER - LIGHT
+   ======================================== */
+:root,
+[data-theme="lavender-light"] {
+    --color-primary: #8b8fd9;
+    --color-primary-light: #a7aaf0;
+    --color-primary-lighter: #c6c9ff;
+    --color-primary-dark: #5b5fae;
+
+    --bg-gradient-start: #b8baf1;
+    --bg-gradient-mid: #a6a8e8;
+    --bg-gradient-end: #d6d8ff;
+
+    --widget-bg:  rgba(139, 143, 217, 0.78);
+    --widget-bg-hover: rgba(139, 143, 217, 0.9);
+    --widget-glass:   rgba(255, 255, 255, 0.18);
+    --widget-border:  rgba(255, 255, 255, 0.55);
+
+    --text-primary:  rgba(255, 255, 255, 0.96);
+    --text-secondary:  rgba(255, 255, 255, 0.88);
+    --text-muted: rgba(255, 255, 255, 0.72);
+
+    --text-dark: rgba(40, 40, 70, 0.9);
+    --text-dark-muted:   rgba(40, 40, 70, 0.65);
+
+    --accent-highlight:  rgba(255, 255, 255, 0.95);
+    --accent-shadow:  rgba(40, 40, 70, 0.18);
+
+    --menubar-bg: rgba(214, 216, 255, 0.8);
+    --menubar-text: #5b5fae;
+
+    --weather-bg:   rgba(166, 168, 232, 0.75);
+    --calendar-bg:  rgba(139, 143, 217, 0.85);
+    --dock-bg: rgba(245, 245, 255, 0.75);
+
+    --shadow-sm: 0 2px 10px rgba(40, 40, 70, 0.08);
+    --shadow-md: 0 6px 20px rgba(40, 40, 70, 0.12);
+    --shadow-lg: 0 12px 32px rgba(40, 40, 70, 0.18);
+
+    --transition-fast:  0.18s ease;
+    --transition-normal: 0.32s ease;
+    
+    /* Theme photos */
+    --polaroid-1: url('../imgs/userdata/themes/lavender/p1.jpeg');
+    --polaroid-2: url('../imgs/userdata/themes/lavender/p2.jpeg');
+    --square-photo: url('../imgs/userdata/themes/lavender/sq.jpeg');
+    --top-decor:  url('../imgs/userdata/themes/lavender/top.png');
+    --bottom-decor: url('../imgs/userdata/themes/lavender/bottom.png');
+    
+    /* App icons */
+    --icon-cats-perspective: url('../imgs/userdata/themes/lavender/lavender_vinyl.png');
+    --icon-calculator: url('../imgs/userdata/themes/lavender/lavender_vinyl.png');
+    --icon-echoura: url('../imgs/userdata/themes/lavender/lavender_vinyl.png');
+    --icon-mailbox: url('../imgs/userdata/themes/lavender/lavender_vinyl.png');
+    --icon-random: url('../imgs/userdata/themes/lavender/lavender_vinyl.png');
+    --icon-breeze: url('../imgs/userdata/themes/lavender/lavender_vinyl.png');
+    --icon-memoir: url('../imgs/userdata/themes/lavender/lavender_vinyl.png');
+    --icon-scrapbook: url('../imgs/userdata/themes/lavender/lavender_vinyl.png');
+    --icon-lemonure: url('../imgs/userdata/themes/lavender/lavender_vinyl.png');
+    --icon-home: url('../imgs/userdata/themes/lavender/lavender_home.png');
+}
+
+/* ========================================
+   💜 LAVENDER - DARK
+   ======================================== */
+[data-theme="lavender-dark"] {
+    --color-primary: #a7aaf0;
+    --color-primary-light: #b8baf1;
+    --color-primary-lighter: #d6d8ff;
+    --color-primary-dark: #8b8fd9;
+
+    --bg-gradient-start: #000000;
+    --bg-gradient-mid: #0a0a1a;
+    --bg-gradient-end: #14142e;
+
+    --widget-bg:   rgba(139, 143, 217, 0.15);
+    --widget-bg-hover: rgba(139, 143, 217, 0.25);
+    --widget-glass:   rgba(255, 255, 255, 0.05);
+    --widget-border:   rgba(167, 170, 240, 0.3);
+
+    --text-primary:   rgba(255, 255, 255, 0.95);
+    --text-secondary:  rgba(255, 255, 255, 0.8);
+    --text-muted: rgba(255, 255, 255, 0.5);
+
+    --text-dark: #a7aaf0;
+    --text-dark-muted: #8b8fd9;
+
+    --accent-highlight: #d6d8ff;
+    --accent-shadow: rgba(0, 0, 0, 0.5);
+
+    --menubar-bg: rgba(10, 10, 26, 0.95);
+    --menubar-text: #b8baf1;
+
+    --weather-bg: rgba(139, 143, 217, 0.2);
+    --calendar-bg:   rgba(139, 143, 217, 0.2);
+    --dock-bg: rgba(10, 10, 26, 0.9);
+
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.6);
+
+    --transition-fast:   0.18s ease;
+    --transition-normal: 0.32s ease;
+    
+    --polaroid-1: url('../imgs/userdata/themes/lavender/p1.jpeg');
+    --polaroid-2: url('../imgs/userdata/themes/lavender/p2.jpeg');
+    --square-photo: url('../imgs/userdata/themes/lavender/sq.jpeg');
+    --top-decor: url('../imgs/userdata/themes/lavender/top.png');
+    --bottom-decor: url('../imgs/userdata/themes/lavender/bottom.png');
+    
+    --icon-cats-perspective: url('../imgs/userdata/themes/lavender/lavender_vinyl.png');
+    --icon-calculator: url('../imgs/userdata/themes/lavender/lavender_vinyl.png');
+    --icon-echoura: url('../imgs/userdata/themes/lavender/lavender_vinyl.png');
+    --icon-mailbox: url('../imgs/userdata/themes/lavender/lavender_vinyl.png');
+    --icon-random:  url('../imgs/userdata/themes/lavender/lavender_vinyl.png');
+    --icon-breeze: url('../imgs/userdata/themes/lavender/lavender_vinyl.png');
+    --icon-memoir: url('../imgs/userdata/themes/lavender/lavender_vinyl.png');
+    --icon-scrapbook: url('../imgs/userdata/themes/lavender/lavender_vinyl.png');
+    --icon-lemonure:  url('../imgs/userdata/themes/lavender/lavender_vinyl.png');
+    --icon-home: url('../imgs/userdata/themes/lavender/lavender_home.png');
+}
+
+/* ========================================
+   🌸 ROSE - LIGHT
+   ======================================== */
+[data-theme="rose-light"] {
+    --color-primary:   #e63946;
+    --color-primary-light: #f27186;
+    --color-primary-lighter: #ffb3ba;
+    --color-primary-dark: #c81d2e;
+
+    --bg-gradient-start: #ffc1cc;
+    --bg-gradient-mid: #ffb3ba;
+    --bg-gradient-end: #ffe0e5;
+
+    --widget-bg:   rgba(230, 57, 70, 0.75);
+    --widget-bg-hover: rgba(230, 57, 70, 0.9);
+    --widget-glass:   rgba(255, 255, 255, 0.2);
+    --widget-border:   rgba(255, 255, 255, 0.6);
+
+    --text-primary:  rgba(255, 255, 255, 0.98);
+    --text-secondary:   rgba(255, 255, 255, 0.9);
+    --text-muted:  rgba(255, 255, 255, 0.75);
+
+    --text-dark: rgba(120, 20, 30, 0.95);
+    --text-dark-muted:  rgba(120, 20, 30, 0.7);
+
+    --accent-highlight:   rgba(255, 255, 255, 1);
+    --accent-shadow:   rgba(120, 20, 30, 0.2);
+
+    --menubar-bg: rgba(255, 224, 229, 0.85);
+    --menubar-text: #c81d2e;
+
+    --weather-bg: rgba(242, 113, 134, 0.75);
+    --calendar-bg:   rgba(230, 57, 70, 0.8);
+    --dock-bg: rgba(255, 240, 245, 0.8);
+
+    --shadow-sm: 0 2px 10px rgba(120, 20, 30, 0.1);
+    --shadow-md: 0 6px 20px rgba(120, 20, 30, 0.15);
+    --shadow-lg: 0 12px 32px rgba(120, 20, 30, 0.2);
+
+    --transition-fast:  0.18s ease;
+    --transition-normal: 0.32s ease;
+    
+    --polaroid-1: url('../imgs/userdata/themes/rose/p1.jpg');
+    --polaroid-2: url('../imgs/userdata/themes/rose/p2.jpg');
+    --square-photo: url('../imgs/userdata/themes/rose/sq.jpg');
+    --top-decor: url('../imgs/userdata/themes/rose/top.png');
+    --bottom-decor: url('../imgs/userdata/themes/rose/bottom.png');
+    
+    --icon-cats-perspective: url('../imgs/userdata/themes/rose/rose_vinyl.png');
+    --icon-calculator: url('../imgs/userdata/themes/rose/rose_vinyl.png');
+    --icon-echoura: url('../imgs/userdata/themes/rose/rose_vinyl.png');
+    --icon-mailbox: url('../imgs/userdata/themes/rose/rose_vinyl.png');
+    --icon-random: url('../imgs/userdata/themes/rose/rose_vinyl.png');
+    --icon-breeze: url('../imgs/userdata/themes/rose/rose_vinyl.png');
+    --icon-memoir: url('../imgs/userdata/themes/rose/rose_vinyl.png');
+    --icon-scrapbook: url('../imgs/userdata/themes/rose/rose_vinyl.png');
+    --icon-lemonure: url('../imgs/userdata/themes/rose/rose_vinyl.png');
+    --icon-home: url('../imgs/userdata/themes/rose/rose_home.png');
+}
+
+/* ========================================
+   🌸 ROSE - DARK
+   ======================================== */
+[data-theme="rose-dark"] {
+    --color-primary:  #f27186;
+    --color-primary-light: #ffb3ba;
+    --color-primary-lighter: #ffc1cc;
+    --color-primary-dark: #e63946;
+
+    --bg-gradient-start: #000000;
+    --bg-gradient-mid: #1a0508;
+    --bg-gradient-end: #2d0a10;
+
+    --widget-bg:   rgba(230, 57, 70, 0.15);
+    --widget-bg-hover: rgba(230, 57, 70, 0.25);
+    --widget-glass:  rgba(255, 255, 255, 0.05);
+    --widget-border:  rgba(242, 113, 134, 0.3);
+
+    --text-primary:  rgba(255, 255, 255, 0.95);
+    --text-secondary:   rgba(255, 255, 255, 0.8);
+    --text-muted: rgba(255, 255, 255, 0.5);
+
+    --text-dark: #f27186;
+    --text-dark-muted: #e63946;
+
+    --accent-highlight:  #ffb3ba;
+    --accent-shadow: rgba(0, 0, 0, 0.5);
+
+    --menubar-bg: rgba(26, 5, 8, 0.95);
+    --menubar-text: #ffb3ba;
+
+    --weather-bg: rgba(230, 57, 70, 0.2);
+    --calendar-bg:  rgba(230, 57, 70, 0.2);
+    --dock-bg: rgba(26, 5, 8, 0.9);
+
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.6);
+
+    --transition-fast: 0.18s ease;
+    --transition-normal:   0.32s ease;
+    
+    --polaroid-1: url('../imgs/userdata/themes/rose/p1.jpg');
+    --polaroid-2: url('../imgs/userdata/themes/rose/p2.jpg');
+    --square-photo: url('../imgs/userdata/themes/rose/sq.jpg');
+    --top-decor: url('../imgs/userdata/themes/rose/top.png');
+    --bottom-decor: url('../imgs/userdata/themes/rose/bottom.png');
+    
+    --icon-cats-perspective: url('../imgs/userdata/themes/rose/rose_vinyl.png');
+    --icon-calculator: url('../imgs/userdata/themes/rose/rose_vinyl.png');
+    --icon-echoura:  url('../imgs/userdata/themes/rose/rose_vinyl.png');
+    --icon-mailbox: url('../imgs/userdata/themes/rose/rose_vinyl.png');
+    --icon-random: url('../imgs/userdata/themes/rose/rose_vinyl.png');
+    --icon-breeze: url('../imgs/userdata/themes/rose/rose_vinyl.png');
+    --icon-memoir: url('../imgs/userdata/themes/rose/rose_vinyl.png');
+    --icon-scrapbook: url('../imgs/userdata/themes/rose/rose_vinyl.png');
+    --icon-lemonure: url('../imgs/userdata/themes/rose/rose_vinyl.png');
+    --icon-home: url('../imgs/userdata/themes/rose/rose_home.png');
+}
+
+/* ========================================
+   💗 BLUSH - LIGHT
+   ======================================== */
+[data-theme="blush-light"] {
+    --color-primary:  #ffc0cb;
+    --color-primary-light: #ffd6dd;
+    --color-primary-lighter: #ffe6ec;
+    --color-primary-dark: #ffaabb;
+
+    --bg-gradient-start: #fff0f3;
+    --bg-gradient-mid: #ffe6ec;
+    --bg-gradient-end: #fff5f7;
+
+    --widget-bg:  rgba(255, 192, 203, 0.75);
+    --widget-bg-hover: rgba(255, 192, 203, 0.9);
+    --widget-glass:   rgba(255, 255, 255, 0.3);
+    --widget-border:   rgba(255, 255, 255, 0.7);
+
+    --text-primary:   rgba(255, 255, 255, 0.98);
+    --text-secondary:   rgba(255, 255, 255, 0.9);
+    --text-muted:  rgba(255, 255, 255, 0.75);
+
+    --text-dark: rgba(150, 80, 100, 0.95);
+    --text-dark-muted:   rgba(150, 80, 100, 0.7);
+
+    --accent-highlight: rgba(255, 255, 255, 1);
+    --accent-shadow: rgba(150, 80, 100, 0.15);
+
+    --menubar-bg: rgba(255, 245, 247, 0.9);
+    --menubar-text: #ffaabb;
+
+    --weather-bg: rgba(255, 214, 221, 0.75);
+    --calendar-bg:  rgba(255, 192, 203, 0.8);
+    --dock-bg: rgba(255, 250, 252, 0.85);
+
+    --shadow-sm: 0 2px 10px rgba(150, 80, 100, 0.08);
+    --shadow-md: 0 6px 20px rgba(150, 80, 100, 0.12);
+    --shadow-lg: 0 12px 32px rgba(150, 80, 100, 0.18);
+
+    --transition-fast:   0.18s ease;
+    --transition-normal: 0.32s ease;
+    
+    --polaroid-1: url('../imgs/userdata/themes/blush/p1.jpg');
+    --polaroid-2: url('../imgs/userdata/themes/blush/p2.jpg');
+    --square-photo: url('../imgs/userdata/themes/blush/sq.jpg');
+    --top-decor: url('../imgs/userdata/themes/blush/top.png');
+    --bottom-decor:  url('../imgs/userdata/themes/blush/bottom.png');
+    
+    --icon-cats-perspective: url('../imgs/userdata/themes/blush/blush_vinyl.png');
+    --icon-calculator: url('../imgs/userdata/themes/blush/blush_vinyl.png');
+    --icon-echoura: url('../imgs/userdata/themes/blush/blush_vinyl.png');
+    --icon-mailbox: url('../imgs/userdata/themes/blush/blush_vinyl.png');
+    --icon-random: url('../imgs/userdata/themes/blush/blush_vinyl.png');
+    --icon-breeze: url('../imgs/userdata/themes/blush/blush_vinyl.png');
+    --icon-memoir: url('../imgs/userdata/themes/blush/blush_vinyl.png');
+    --icon-scrapbook: url('../imgs/userdata/themes/blush/blush_vinyl.png');
+    --icon-lemonure: url('../imgs/userdata/themes/blush/blush_vinyl.png');
+    --icon-home: url('../imgs/userdata/themes/blush/blush_home.png');
+}
+
+/* ========================================
+   💗 BLUSH - DARK
+   ======================================== */
+[data-theme="blush-dark"] {
+    --color-primary: #ffd6dd;
+    --color-primary-light:   #ffe6ec;
+    --color-primary-lighter: #fff5f7;
+    --color-primary-dark: #ffc0cb;
+
+    --bg-gradient-start: #000000;
+    --bg-gradient-mid: #1a0a0d;
+    --bg-gradient-end: #2d1419;
+
+    --widget-bg:   rgba(255, 192, 203, 0.15);
+    --widget-bg-hover: rgba(255, 192, 203, 0.25);
+    --widget-glass:   rgba(255, 255, 255, 0.05);
+    --widget-border:   rgba(255, 214, 221, 0.3);
+
+    --text-primary:   rgba(255, 255, 255, 0.95);
+    --text-secondary:   rgba(255, 255, 255, 0.8);
+    --text-muted: rgba(255, 255, 255, 0.5);
+
+    --text-dark: #ffd6dd;
+    --text-dark-muted: #ffc0cb;
+
+    --accent-highlight: #ffe6ec;
+    --accent-shadow: rgba(0, 0, 0, 0.5);
+
+    --menubar-bg: rgba(26, 10, 13, 0.95);
+    --menubar-text: #ffe6ec;
+
+    --weather-bg: rgba(255, 192, 203, 0.2);
+    --calendar-bg:   rgba(255, 192, 203, 0.2);
+    --dock-bg: rgba(26, 10, 13, 0.9);
+
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.6);
+
+    --transition-fast:  0.18s ease;
+    --transition-normal: 0.32s ease;
+    
+    --polaroid-1: url('../imgs/userdata/themes/blush/p1.jpg');
+    --polaroid-2: url('../imgs/userdata/themes/blush/p2.jpg');
+    --square-photo: url('../imgs/userdata/themes/blush/sq.jpg');
+    --top-decor: url('../imgs/userdata/themes/blush/top.png');
+    --bottom-decor:  url('../imgs/userdata/themes/blush/bottom.png');
+    
+    --icon-cats-perspective: url('../imgs/userdata/themes/blush/blush_vinyl.png');
+    --icon-calculator: url('../imgs/userdata/themes/blush/blush_vinyl.png');
+    --icon-echoura: url('../imgs/userdata/themes/blush/blush_vinyl.png');
+    --icon-mailbox: url('../imgs/userdata/themes/blush/blush_vinyl.png');
+    --icon-random: url('../imgs/userdata/themes/blush/blush_vinyl.png');
+    --icon-breeze: url('../imgs/userdata/themes/blush/blush_vinyl.png');
+    --icon-memoir: url('../imgs/userdata/themes/blush/blush_vinyl.png');
+    --icon-scrapbook: url('../imgs/userdata/themes/blush/blush_vinyl.png');
+    --icon-lemonure: url('../imgs/userdata/themes/blush/blush_vinyl.png');
+    --icon-home: url('../imgs/userdata/themes/blush/blush_home.png');
+}
+
+/* ========================================
+   🦪 PEARL - LIGHT
+   ======================================== */
+[data-theme="pearl-light"] {
+    --color-primary: #f8f8ff;
+    --color-primary-light: #ffffff;
+    --color-primary-lighter: #fafafa;
+    --color-primary-dark: #e8e8f5;
+
+    --bg-gradient-start: #ffffff;
+    --bg-gradient-mid: #f8f8ff;
+    --bg-gradient-end: #fafaff;
+
+    --widget-bg:   rgba(255, 255, 255, 0.6);
+    --widget-bg-hover: rgba(255, 255, 255, 0.8);
+    --widget-glass:   rgba(255, 255, 255, 0.4);
+    --widget-border:   rgba(200, 200, 232, 0.5);
+
+    --text-primary:   rgba(80, 80, 120, 0.95);
+    --text-secondary:  rgba(80, 80, 120, 0.85);
+    --text-muted: rgba(80, 80, 120, 0.65);
+
+    --text-dark: rgba(60, 60, 100, 0.95);
+    --text-dark-muted:  rgba(60, 60, 100, 0.7);
+
+    --accent-highlight: rgba(255, 255, 255, 1);
+    --accent-shadow:   rgba(200, 200, 232, 0.3);
+
+    --menubar-bg: rgba(255, 255, 255, 0.9);
+    --menubar-text: #9090c0;
+
+    --weather-bg:   rgba(248, 248, 255, 0.7);
+    --calendar-bg:   rgba(255, 255, 255, 0.75);
+    --dock-bg: rgba(255, 255, 255, 0.8);
+
+    --shadow-sm: 0 2px 10px rgba(200, 200, 232, 0.2);
+    --shadow-md: 0 6px 20px rgba(200, 200, 232, 0.25);
+    --shadow-lg: 0 12px 32px rgba(200, 200, 232, 0.3);
+
+    --transition-fast: 0.18s ease;
+    --transition-normal: 0.32s ease;
+    
+    --polaroid-1: url('../imgs/userdata/themes/pearl/p1.jpg');
+    --polaroid-2: url('../imgs/userdata/themes/pearl/p2.jpg');
+    --square-photo:  url('../imgs/userdata/themes/pearl/sq.jpeg');
+    --top-decor: url('../imgs/userdata/themes/pearl/top.png');
+    --bottom-decor: url('../imgs/userdata/themes/pearl/bottom.png');
+    
+    --icon-cats-perspective:  url('../imgs/userdata/themes/pearl/pearl_vinyl.png');
+    --icon-calculator: url('../imgs/userdata/themes/pearl/pearl_vinyl.png');
+    --icon-echoura: url('../imgs/userdata/themes/pearl/pearl_vinyl.png');
+    --icon-mailbox: url('../imgs/userdata/themes/pearl/pearl_vinyl.png');
+    --icon-random: url('../imgs/userdata/themes/pearl/pearl_vinyl.png');
+    --icon-breeze: url('../imgs/userdata/themes/pearl/pearl_vinyl.png');
+    --icon-memoir: url('../imgs/userdata/themes/pearl/pearl_vinyl.png');
+    --icon-scrapbook: url('../imgs/userdata/themes/pearl/pearl_vinyl.png');
+    --icon-lemonure: url('../imgs/userdata/themes/pearl/pearl_vinyl.png');
+    --icon-home: url('../imgs/userdata/themes/pearl/pearl_home.png');
+}
+
+/* ========================================
+   🦪 PEARL - DARK
+   ======================================== */
+[data-theme="pearl-dark"] {
+    --color-primary: #e8e8f5;
+    --color-primary-light:  #f8f8ff;
+    --color-primary-lighter: #ffffff;
+    --color-primary-dark: #d8d8e8;
+
+    --bg-gradient-start: #000000;
+    --bg-gradient-mid: #0a0a12;
+    --bg-gradient-end: #14141e;
+
+    --widget-bg:   rgba(255, 255, 255, 0.08);
+    --widget-bg-hover: rgba(255, 255, 255, 0.15);
+    --widget-glass:   rgba(255, 255, 255, 0.05);
+    --widget-border:   rgba(232, 232, 245, 0.25);
+
+    --text-primary:   rgba(255, 255, 255, 0.95);
+    --text-secondary: rgba(255, 255, 255, 0.8);
+    --text-muted: rgba(255, 255, 255, 0.5);
+
+    --text-dark: #e8e8f5;
+    --text-dark-muted: #d8d8e8;
+
+    --accent-highlight: #f8f8ff;
+    --accent-shadow:  rgba(0, 0, 0, 0.5);
+
+    --menubar-bg: rgba(10, 10, 18, 0.95);
+    --menubar-text: #e8e8f5;
+
+    --weather-bg:  rgba(255, 255, 255, 0.12);
+    --calendar-bg:   rgba(255, 255, 255, 0.12);
+    --dock-bg: rgba(10, 10, 18, 0.9);
+
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.6);
+
+    --transition-fast:   0.18s ease;
+    --transition-normal: 0.32s ease;
+    
+    --polaroid-1: url('../imgs/userdata/themes/pearl/p1.jpg');
+    --polaroid-2: url('../imgs/userdata/themes/pearl/p2.jpg');
+    --square-photo: url('../imgs/userdata/themes/pearl/sq.jpeg');
+    --top-decor: url('../imgs/userdata/themes/pearl/top.png');
+    --bottom-decor: url('../imgs/userdata/themes/pearl/bottom.png');
+    
+    --icon-cats-perspective: url('../imgs/userdata/themes/pearl/pearl_vinyl.png');
+    --icon-calculator: url('../imgs/userdata/themes/pearl/pearl_vinyl.png');
+    --icon-echoura: url('../imgs/userdata/themes/pearl/pearl_vinyl.png');
+    --icon-mailbox: url('../imgs/userdata/themes/pearl/pearl_vinyl.png');
+    --icon-random: url('../imgs/userdata/themes/pearl/pearl_vinyl.png');
+    --icon-breeze: url('../imgs/userdata/themes/pearl/pearl_vinyl.png');
+    --icon-memoir: url('../imgs/userdata/themes/pearl/pearl_vinyl.png');
+    --icon-scrapbook: url('../imgs/userdata/themes/pearl/pearl_vinyl.png');
+    --icon-lemonure: url('../imgs/userdata/themes/pearl/pearl_vinyl.png');
+    --icon-home: url('../imgs/userdata/themes/pearl/pearl_home.png');
+}
+
+/* ========================================
+   ☁️ SKY - LIGHT
+   ======================================== */
+[data-theme="sky-light"] {
+    --color-primary: #87CEEB;
+    --color-primary-light: #a4d9f5;
+    --color-primary-lighter: #c1e7ff;
+    --color-primary-dark: #6bb6d8;
+
+    --bg-gradient-start: #d4f1f9;
+    --bg-gradient-mid: #c1e7ff;
+    --bg-gradient-end: #e6f7ff;
+
+    --widget-bg:  rgba(135, 206, 235, 0.75);
+    --widget-bg-hover: rgba(135, 206, 235, 0.9);
+    --widget-glass:  rgba(255, 255, 255, 0.25);
+    --widget-border:   rgba(255, 255, 255, 0.6);
+
+    --text-primary:   rgba(255, 255, 255, 0.98);
+    --text-secondary:   rgba(255, 255, 255, 0.9);
+    --text-muted: rgba(255, 255, 255, 0.75);
+
+    --text-dark: rgba(30, 80, 120, 0.95);
+    --text-dark-muted:   rgba(30, 80, 120, 0.7);
+
+    --accent-highlight:  rgba(255, 255, 255, 1);
+    --accent-shadow: rgba(30, 80, 120, 0.15);
+
+    --menubar-bg: rgba(230, 247, 255, 0.9);
+    --menubar-text: #6bb6d8;
+
+    --weather-bg: rgba(164, 217, 245, 0.75);
+    --calendar-bg: rgba(135, 206, 235, 0.8);
+    --dock-bg: rgba(240, 250, 255, 0.85);
+
+    --shadow-sm: 0 2px 10px rgba(30, 80, 120, 0.1);
+    --shadow-md: 0 6px 20px rgba(30, 80, 120, 0.15);
+    --shadow-lg: 0 12px 32px rgba(30, 80, 120, 0.2);
+
+    --transition-fast: 0.18s ease;
+    --transition-normal:   0.32s ease;
+    
+    --polaroid-1: url('../imgs/userdata/themes/sky/p1.jpg');
+    --polaroid-2: url('../imgs/userdata/themes/sky/p2.jpeg');
+    --square-photo: url('../imgs/userdata/themes/sky/sq.jpg');
+    --top-decor: url('../imgs/userdata/themes/sky/top.png');
+    --bottom-decor: url('../imgs/userdata/themes/sky/bottom.png');
+    
+    --icon-cats-perspective: url('../imgs/userdata/themes/sky/sky_vinyl.png');
+    --icon-calculator: url('../imgs/userdata/themes/sky/sky_vinyl.png');
+    --icon-echoura:  url('../imgs/userdata/themes/sky/sky_vinyl.png');
+    --icon-mailbox: url('../imgs/userdata/themes/sky/sky_vinyl.png');
+    --icon-random: url('../imgs/userdata/themes/sky/sky_vinyl.png');
+    --icon-breeze: url('../imgs/userdata/themes/sky/sky_vinyl.png');
+    --icon-memoir: url('../imgs/userdata/themes/sky/sky_vinyl.png');
+    --icon-scrapbook: url('../imgs/userdata/themes/sky/sky_vinyl.png');
+    --icon-lemonure: url('../imgs/userdata/themes/sky/sky_vinyl.png');
+    --icon-home: url('../imgs/userdata/themes/sky/sky_home.png');
+}
+
+/* ========================================
+   ☁️ SKY - DARK
+   ======================================== */
+[data-theme="sky-dark"] {
+    --color-primary:  #a4d9f5;
+    --color-primary-light: #c1e7ff;
+    --color-primary-lighter: #d4f1f9;
+    --color-primary-dark: #87CEEB;
+
+    --bg-gradient-start: #000000;
+    --bg-gradient-mid: #0a1419;
+    --bg-gradient-end: #14282d;
+
+    --widget-bg:   rgba(135, 206, 235, 0.15);
+    --widget-bg-hover: rgba(135, 206, 235, 0.25);
+    --widget-glass:  rgba(255, 255, 255, 0.05);
+    --widget-border:   rgba(164, 217, 245, 0.3);
+
+    --text-primary:  rgba(255, 255, 255, 0.95);
+    --text-secondary:   rgba(255, 255, 255, 0.8);
+    --text-muted: rgba(255, 255, 255, 0.5);
+
+    --text-dark: #a4d9f5;
+    --text-dark-muted:   #87CEEB;
+
+    --accent-highlight: #c1e7ff;
+    --accent-shadow: rgba(0, 0, 0, 0.5);
+
+    --menubar-bg: rgba(10, 20, 25, 0.95);
+    --menubar-text: #c1e7ff;
+
+    --weather-bg: rgba(135, 206, 235, 0.2);
+    --calendar-bg:  rgba(135, 206, 235, 0.2);
+    --dock-bg: rgba(10, 20, 25, 0.9);
+
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.6);
+
+    --transition-fast: 0.18s ease;
+    --transition-normal:  0.32s ease;
+    
+    --polaroid-1: url('../imgs/userdata/themes/sky/p1.jpg');
+    --polaroid-2: url('../imgs/userdata/themes/sky/p2.jpeg');
+    --square-photo: url('../imgs/userdata/themes/sky/sq.jpg');
+    --top-decor: url('../imgs/userdata/themes/sky/top.png');
+    --bottom-decor: url('../imgs/userdata/themes/sky/bottom.png');
+    
+    --icon-cats-perspective: url('../imgs/userdata/themes/sky/sky_vinyl.png');
+    --icon-calculator: url('../imgs/userdata/themes/sky/sky_vinyl.png');
+    --icon-echoura:  url('../imgs/userdata/themes/sky/sky_vinyl.png');
+    --icon-mailbox: url('../imgs/userdata/themes/sky/sky_vinyl.png');
+    --icon-random: url('../imgs/userdata/themes/sky/sky_vinyl.png');
+    --icon-breeze: url('../imgs/userdata/themes/sky/sky_vinyl.png');
+    --icon-memoir: url('../imgs/userdata/themes/sky/sky_vinyl.png');
+    --icon-scrapbook: url('../imgs/userdata/themes/sky/sky_vinyl.png');
+    --icon-lemonure: url('../imgs/userdata/themes/sky/sky_vinyl.png');
+    --icon-home: url('../imgs/userdata/themes/sky/sky_home.png');
+}
+
+/* ========================================
+   🌿 SAGE - LIGHT
+   ======================================== */
+[data-theme="sage-light"] {
+    --color-primary: #9caf88;
+    --color-primary-light: #b5c7a5;
+    --color-primary-lighter: #d4e3c8;
+    --color-primary-dark: #7a956f;
+
+    --bg-gradient-start: #e8f0df;
+    --bg-gradient-mid: #d4e3c8;
+    --bg-gradient-end: #f0f7eb;
+
+    --widget-bg:   rgba(156, 175, 136, 0.75);
+    --widget-bg-hover: rgba(156, 175, 136, 0.9);
+    --widget-glass: rgba(255, 255, 255, 0.25);
+    --widget-border:  rgba(255, 255, 255, 0.6);
+
+    --text-primary: rgba(255, 255, 255, 0.98);
+    --text-secondary:  rgba(255, 255, 255, 0.9);
+    --text-muted: rgba(255, 255, 255, 0.75);
+
+    --text-dark: rgba(50, 70, 40, 0.95);
+    --text-dark-muted:   rgba(50, 70, 40, 0.7);
+
+    --accent-highlight: rgba(255, 255, 255, 1);
+    --accent-shadow: rgba(50, 70, 40, 0.15);
+
+    --menubar-bg: rgba(240, 247, 235, 0.9);
+    --menubar-text: #7a956f;
+
+    --weather-bg: rgba(181, 199, 165, 0.75);
+    --calendar-bg: rgba(156, 175, 136, 0.8);
+    --dock-bg: rgba(248, 252, 245, 0.85);
+
+    --shadow-sm: 0 2px 10px rgba(50, 70, 40, 0.1);
+    --shadow-md: 0 6px 20px rgba(50, 70, 40, 0.15);
+    --shadow-lg: 0 12px 32px rgba(50, 70, 40, 0.2);
+
+    --transition-fast: 0.18s ease;
+    --transition-normal:  0.32s ease;
+    
+    --polaroid-1: url('../imgs/userdata/themes/sage/p1.jpg');
+    --polaroid-2: url('../imgs/userdata/themes/sage/p2.jpg');
+    --square-photo: url('../imgs/userdata/themes/sage/sq.jpg');
+    --top-decor: url('../imgs/userdata/themes/sage/top.png');
+    --bottom-decor: url('../imgs/userdata/themes/sage/bottom.png');
+    
+    --icon-cats-perspective: url('../imgs/userdata/themes/sage/sage_vinyl.png');
+    --icon-calculator: url('../imgs/userdata/themes/sage/sage_vinyl.png');
+    --icon-echoura:  url('../imgs/userdata/themes/sage/sage_vinyl.png');
+    --icon-mailbox: url('../imgs/userdata/themes/sage/sage_vinyl.png');
+    --icon-random: url('../imgs/userdata/themes/sage/sage_vinyl.png');
+    --icon-breeze: url('../imgs/userdata/themes/sage/sage_vinyl.png');
+    --icon-memoir: url('../imgs/userdata/themes/sage/sage_vinyl.png');
+    --icon-scrapbook: url('../imgs/userdata/themes/sage/sage_vinyl.png');
+    --icon-lemonure: url('../imgs/userdata/themes/sage/sage_vinyl.png');
+    --icon-home: url('../imgs/userdata/themes/sage/sage_home.png');
+}
+
+/* ========================================
+   🌿 SAGE - DARK
+   ======================================== */
+[data-theme="sage-dark"] {
+    --color-primary: #b5c7a5;
+    --color-primary-light: #d4e3c8;
+    --color-primary-lighter:   #e8f0df;
+    --color-primary-dark: #9caf88;
+
+    --bg-gradient-start:  #000000;
+    --bg-gradient-mid: #0a120a;
+    --bg-gradient-end: #142414;
+
+    --widget-bg:   rgba(156, 175, 136, 0.15);
+    --widget-bg-hover:   rgba(156, 175, 136, 0.25);
+    --widget-glass: rgba(255, 255, 255, 0.05);
+    --widget-border:  rgba(181, 199, 165, 0.3);
+
+    --text-primary: rgba(255, 255, 255, 0.95);
+    --text-secondary:   rgba(255, 255, 255, 0.8);
+    --text-muted: rgba(255, 255, 255, 0.5);
+
+    --text-dark: #b5c7a5;
+    --text-dark-muted:  #9caf88;
+
+    --accent-highlight: #d4e3c8;
+    --accent-shadow: rgba(0, 0, 0, 0.5);
+
+    --menubar-bg: rgba(10, 18, 10, 0.95);
+    --menubar-text: #d4e3c8;
+
+    --weather-bg: rgba(156, 175, 136, 0.2);
+    --calendar-bg: rgba(156, 175, 136, 0.2);
+    --dock-bg: rgba(10, 18, 10, 0.9);
+
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.6);
+
+    --transition-fast: 0.18s ease;
+    --transition-normal: 0.32s ease;
+    
+    --polaroid-1: url('../imgs/userdata/themes/sage/p1.jpg');
+    --polaroid-2: url('../imgs/userdata/themes/sage/p2.jpg');
+    --square-photo: url('../imgs/userdata/themes/sage/sq.jpg');
+    --top-decor: url('../imgs/userdata/themes/sage/top.png');
+    --bottom-decor: url('../imgs/userdata/themes/sage/bottom.png');
+    
+    --icon-cats-perspective: url('../imgs/userdata/themes/sage/sage_vinyl.png');
+    --icon-calculator: url('../imgs/userdata/themes/sage/sage_vinyl.png');
+    --icon-echoura: url('../imgs/userdata/themes/sage/sage_vinyl.png');
+    --icon-mailbox:  url('../imgs/userdata/themes/sage/sage_vinyl.png');
+    --icon-random: url('../imgs/userdata/themes/sage/sage_vinyl.png');
+    --icon-breeze: url('../imgs/userdata/themes/sage/sage_vinyl.png');
+    --icon-memoir: url('../imgs/userdata/themes/sage/sage_vinyl.png');
+    --icon-scrapbook: url('../imgs/userdata/themes/sage/sage_vinyl.png');
+    --icon-lemonure: url('../imgs/userdata/themes/sage/sage_vinyl.png');
+    --icon-home: url('../imgs/userdata/themes/sage/sage_home.png');
+}
+
+/* ========================================
+   🌑 VOID - LIGHT
+   ======================================== */
+[data-theme="void-light"] {
+    --color-primary: #6b7280;
+    --color-primary-light: #9ca3af;
+    --color-primary-lighter: #d1d5db;
+    --color-primary-dark: #4b5563;
+
+    --bg-gradient-start: #f3f4f6;
+    --bg-gradient-mid: #e5e7eb;
+    --bg-gradient-end: #f9fafb;
+
+    --widget-bg:  rgba(107, 114, 128, 0.75);
+    --widget-bg-hover: rgba(107, 114, 128, 0.9);
+    --widget-glass: rgba(255, 255, 255, 0.25);
+    --widget-border:   rgba(255, 255, 255, 0.6);
+
+    --text-primary: rgba(255, 255, 255, 0.98);
+    --text-secondary:  rgba(255, 255, 255, 0.9);
+    --text-muted:   rgba(255, 255, 255, 0.75);
+
+    --text-dark: rgba(30, 30, 40, 0.95);
+    --text-dark-muted:   rgba(30, 30, 40, 0.7);
+
+    --accent-highlight: rgba(255, 255, 255, 1);
+    --accent-shadow: rgba(30, 30, 40, 0.15);
+
+    --menubar-bg: rgba(249, 250, 251, 0.9);
+    --menubar-text: #4b5563;
+
+    --weather-bg: rgba(156, 163, 175, 0.75);
+    --calendar-bg:   rgba(107, 114, 128, 0.8);
+    --dock-bg: rgba(255, 255, 255, 0.85);
+
+    --shadow-sm: 0 2px 10px rgba(30, 30, 40, 0.1);
+    --shadow-md: 0 6px 20px rgba(30, 30, 40, 0.15);
+    --shadow-lg: 0 12px 32px rgba(30, 30, 40, 0.2);
+
+    --transition-fast: 0.18s ease;
+    --transition-normal:   0.32s ease;
+    
+    --polaroid-1: url('../imgs/userdata/themes/void/p1.jpg');
+    --polaroid-2: url('../imgs/userdata/themes/void/p2.jpg');
+    --square-photo: url('../imgs/userdata/themes/void/sq.jpg');
+    --top-decor: url('../imgs/userdata/themes/void/top.png');
+    --bottom-decor: url('../imgs/userdata/themes/void/bottom.png');
+    
+    --icon-cats-perspective: url('../imgs/userdata/themes/void/void_vinyl.png');
+    --icon-calculator: url('../imgs/userdata/themes/void/void_vinyl.png');
+    --icon-echoura:  url('../imgs/userdata/themes/void/void_vinyl.png');
+    --icon-mailbox: url('../imgs/userdata/themes/void/void_vinyl.png');
+    --icon-random: url('../imgs/userdata/themes/void/void_vinyl.png');
+    --icon-breeze: url('../imgs/userdata/themes/void/void_vinyl.png');
+    --icon-memoir: url('../imgs/userdata/themes/void/void_vinyl.png');
+    --icon-scrapbook: url('../imgs/userdata/themes/void/void_vinyl.png');
+    --icon-lemonure: url('../imgs/userdata/themes/void/void_vinyl.png');
+    --icon-home: url('../imgs/userdata/themes/void/void_home.png');
+}
+
+/* ========================================
+   🌑 VOID - DARK
+   ======================================== */
+[data-theme="void-dark"] {
+    --color-primary: #00ff9f;
+    --color-primary-light: #00ffb8;
+    --color-primary-lighter: #66ffc9;
+    --color-primary-dark: #00e68a;
+
+    --bg-gradient-start: #000000;
+    --bg-gradient-mid:   #000000;
+    --bg-gradient-end: #000000;
+
+    --widget-bg: rgba(0, 255, 159, 0.08);
+    --widget-bg-hover: rgba(0, 255, 159, 0.15);
+    --widget-glass:   rgba(255, 255, 255, 0.03);
+    --widget-border:   rgba(0, 255, 159, 0.3);
+
+    --text-primary: rgba(255, 255, 255, 0.98);
+    --text-secondary: rgba(255, 255, 255, 0.85);
+    --text-muted:  rgba(255, 255, 255, 0.6);
+
+    --text-dark: #00ff9f;
+    --text-dark-muted: #00e68a;
+
+    --accent-highlight: #00ffb8;
+    --accent-shadow: rgba(0, 255, 159, 0.5);
+
+    --menubar-bg: rgba(0, 0, 0, 0.98);
+    --menubar-text: #00ffb8;
+
+    --weather-bg: rgba(0, 255, 159, 0.1);
+    --calendar-bg:   rgba(0, 255, 159, 0.1);
+    --dock-bg: rgba(0, 0, 0, 0.95);
+
+    --shadow-sm: 0 2px 10px rgba(0, 255, 159, 0.2);
+    --shadow-md: 0 6px 20px rgba(0, 255, 159, 0.3);
+    --shadow-lg: 0 12px 32px rgba(0, 255, 159, 0.4);
+
+    --transition-fast:  0.18s ease;
+    --transition-normal:  0.32s ease;
+    
+    --polaroid-1: url('../imgs/userdata/themes/void/p1.jpg');
+    --polaroid-2: url('../imgs/userdata/themes/void/p2.jpg');
+    --square-photo: url('../imgs/userdata/themes/void/sq.jpg');
+    --top-decor: url('../imgs/userdata/themes/void/top.png');
+    --bottom-decor: url('../imgs/userdata/themes/void/bottom.png');
+    
+    --icon-cats-perspective: url('../imgs/userdata/themes/void/void_vinyl.png');
+    --icon-calculator: url('../imgs/userdata/themes/void/void_vinyl.png');
+    --icon-echoura:  url('../imgs/userdata/themes/void/void_vinyl.png');
+    --icon-mailbox: url('../imgs/userdata/themes/void/void_vinyl.png');
+    --icon-random: url('../imgs/userdata/themes/void/void_vinyl.png');
+    --icon-breeze: url('../imgs/userdata/themes/void/void_vinyl.png');
+    --icon-memoir: url('../imgs/userdata/themes/void/void_vinyl.png');
+    --icon-scrapbook: url('../imgs/userdata/themes/void/void_vinyl.png');
+    --icon-lemonure: url('../imgs/userdata/themes/void/void_vinyl.png');
+    --icon-home: url('../imgs/userdata/themes/void/void_home.png');
+}
+
+/* Readable semantic text and focus tokens shared across every palette. */
+:root,
+[data-theme$="-light"] {
+    --text-primary: var(--text-dark);
+    --text-secondary: var(--text-dark);
+    --text-muted: var(--text-dark-muted);
+    --focus-ring: #3f356f;
+}
+
+[data-theme$="-dark"] {
+    --focus-ring: var(--color-primary-light);
+}

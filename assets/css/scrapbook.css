@@ -1,0 +1,197 @@
+/* ===== Scrapbook (frontend paint + emoji stickers) ===== */
+
+.scrapbook-window {
+    width: min(960px, 96vw);
+    height: min(90vh, 680px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;            /* no window-level scrollbar; panes manage their own */
+}
+
+.paint {
+    flex: 1;
+    min-height: 0;               /* lets children shrink instead of forcing scroll */
+    display: flex;
+    gap: 10px;
+    padding: 12px;
+    color: var(--text-primary);
+}
+
+/* ---- Left pane ---- */
+.sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto;            /* if controls ever exceed height, only this scrolls */
+    padding-right: 4px;
+}
+
+.sidebar::-webkit-scrollbar { width: 7px; }
+.sidebar::-webkit-scrollbar-thumb { background: var(--color-primary-light); border-radius: 4px; }
+
+.panel {
+    background: var(--widget-glass);
+    border: 1px solid var(--widget-border);
+    border-radius: 14px;
+    padding: 8px 10px;
+    backdrop-filter: blur(12px);
+}
+
+.panel-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    letter-spacing: 0.2px;
+}
+
+/* ---- Tool + action buttons ---- */
+.tool-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+}
+
+.actions-panel {
+    display: flex;
+    gap: 6px;
+    justify-content: space-between;
+}
+
+.tool-btn {
+    font-family: inherit;
+    font-size: 17px;
+    line-height: 1;
+    width: 100%;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    border-radius: 11px;
+    background: var(--accent-highlight);
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+    box-shadow: var(--shadow-sm);
+}
+
+.actions-panel .tool-btn { width: 44px; flex: 1; }
+
+.tool-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.tool-btn:focus-visible { outline: 3px solid var(--color-primary-dark); outline-offset: 2px; }
+.tool-btn:disabled { opacity: 0.4; cursor: default; transform: none; box-shadow: none; }
+
+.tool-btn[aria-pressed="true"] {
+    background: var(--color-primary);
+    color: var(--text-primary);
+    border-color: var(--accent-highlight);
+    box-shadow: var(--shadow-md), inset 0 0 0 2px var(--accent-highlight);
+}
+
+.tool-btn.save-btn { background: var(--color-primary-light); color: var(--text-primary); }
+
+/* ---- Size ---- */
+.size-group { display: flex; align-items: center; gap: 8px; }
+#sizeRange { accent-color: var(--color-primary-dark); flex: 1; cursor: pointer; }
+.size-value { min-width: 22px; text-align: center; font-size: 13px; color: var(--text-primary); }
+
+/* ---- Colours ---- */
+.color-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.swatches, .papers { display: flex; gap: 6px; flex-wrap: wrap; }
+
+.swatch {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-highlight);
+    cursor: pointer;
+    padding: 0;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-fast);
+}
+.swatch:hover { transform: scale(1.15); }
+.swatch:focus-visible { outline: 3px solid var(--color-primary-dark); outline-offset: 2px; }
+.swatch[aria-pressed="true"] { transform: scale(1.15); box-shadow: 0 0 0 3px var(--color-primary-dark); }
+.paper-swatch { border-radius: 8px; }
+
+.custom-color {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px dashed var(--color-primary-dark);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.custom-color-plus { position: absolute; font-size: 16px; font-weight: 700; color: var(--color-primary-dark); pointer-events: none; z-index: 1; }
+.custom-color input[type="color"] { position: absolute; inset: -6px; width: 200%; height: 200%; border: none; padding: 0; cursor: pointer; opacity: 0; }
+
+/* ---- Stickers (2-row horizontal scroll, stays compact) ---- */
+.tray-hint { display: block; font-size: 11px; color: var(--text-secondary); margin-bottom: 6px; }
+.sticker-scroll {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 4px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: thin;
+}
+.sticker-scroll::-webkit-scrollbar { height: 7px; }
+.sticker-scroll::-webkit-scrollbar-thumb { background: var(--color-primary-light); border-radius: 4px; }
+
+.sticker-btn {
+    font-size: 20px;
+    line-height: 1;
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: transparent;
+    cursor: pointer;
+    transition: transform var(--transition-fast), background var(--transition-fast);
+}
+.sticker-btn:hover { transform: scale(1.15) rotate(-4deg); background: var(--accent-highlight); }
+.sticker-btn:focus-visible { outline: 3px solid var(--color-primary-dark); outline-offset: 1px; }
+.sticker-btn[aria-pressed="true"] { background: var(--color-primary); border-color: var(--accent-highlight); }
+
+/* ---- Right pane: canvas ---- */
+.canvas-wrap {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    background: var(--widget-glass);
+    border: 1px solid var(--widget-border);
+    border-radius: 16px;
+}
+
+#board {
+    width: 100%;
+    max-height: 100%;
+    aspect-ratio: 900 / 560;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    background: #ffffff;
+    cursor: crosshair;
+    touch-action: none;
+}
+
+/* ---- Narrow screens: stack, let it scroll if it must ---- */
+@media (max-width: 640px) {
+    .scrapbook-window { height: auto; max-height: 92vh; overflow-y: auto; }
+    .paint { flex-direction: column; }
+    .sidebar { width: 100%; overflow: visible; }
+    .tool-grid { grid-template-columns: repeat(7, 1fr); }
+}

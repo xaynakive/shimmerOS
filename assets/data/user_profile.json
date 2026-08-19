@@ -1,0 +1,68 @@
+{
+  "name": "xayna",
+  "username": "xayna",
+  "bio": "cs student • creative coder • cybersecurity enthusiast • ai explorer",
+  "personality": {
+    "traits": [
+      "creative",
+      "determined",
+      "procrastinator",
+      "perfectionist",
+      "night owl",
+      "stubborn about spicy food"
+    ],
+    "work_style": "thrives under pressure, works best at 3am, aesthetic-focused",
+    "humor": "self-aware, sarcastic, deadpan"
+  },
+  "habits": {
+    "good":  [
+      "passionate about projects",
+      "dedicated to learning",
+      "creative problem solver"
+    ],
+    "bad":  [
+      "eats spicy ramen daily despite stomach issues",
+      "chronic procrastination",
+      "stays up too late coding",
+      "excessive social media usage when stressed"
+    ]
+  },
+  "preferences": {
+    "aesthetic":  "glassmorphism, pink/purple themes, soft tech",
+    "coding_music": "lo-fi hip hop, ambient",
+    "favorite_emoji": "🦋",
+    "comfort_food": "spicy ramen (obviously)"
+  },
+  "projects": [
+    {
+      "name": "ShimmerOS",
+      "description": "personal desktop environment with AI companion",
+      "status": "in progress",
+      "passion_level": 10
+    },
+    {
+      "name": "Breeze AI",
+      "description": "context-aware AI that understands daily life",
+      "status": "in progress",
+      "passion_level": 9
+    },
+    {
+      "name": "Echoura Portal",
+      "description": "surreal neko university system",
+      "status": "completed",
+      "passion_level":  8
+    }
+  ],
+  "health":  {
+    "recurring_issues": [
+      "stomach pain from spicy food",
+      "headaches from screen time",
+      "sleep deprivation"
+    ],
+    "ignored_warnings": [
+      "stop eating spicy ramen daily",
+      "get more sleep",
+      "reduce screen time"
+    ]
+  }
+}

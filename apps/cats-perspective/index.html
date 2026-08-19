@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat's Perspective > ShimmerOS</title>
+    <link rel="stylesheet" href="../../assets/css/themes.css">
+    <link rel="stylesheet" href="../../assets/css/base.css">
+    <link rel="stylesheet" href="../../assets/css/cats-perspective.css">
+    <script>
+        const savedTheme = localStorage.getItem('ShimmerOS_theme') || 'lavender-light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+<body>
+    <!-- MENU BAR -->
+    <div class="menu-bar">
+        <div class="menu-left">
+            <span class="menu-logo">🌻</span>
+            <span class="menu-item">Cat's Perspective</span>
+            <span class="menu-item">Edit</span>
+            <span class="menu-item">View</span>
+            <span class="menu-item">Window</span>
+            <span class="menu-item">Help</span>
+        </div>
+        <div class="menu-right">
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/butterfly.png" class="menu-img" alt="Butterfly"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/battery-empty.png" class="menu-img" alt="Battery"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/wifi-high.png" class="menu-img" alt="WiFi"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/bluetooth.png" class="menu-img" alt="Bluetooth"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/heart.png" class="menu-img" alt="Heart"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/user-circle.png" class="menu-img" alt="User"></span>
+            <span class="menu-icon" id="menuTime">Loading...</span>
+        </div>
+    </div>
+
+    <!-- MAIN WINDOW -->
+    <div class="window" style="width: 900px; max-height: 80vh;">
+        <div class="window-bar">
+            <div class="window-controls">
+                <button class="control-btn close" onclick="window.location.href='../../home/index.html'"></button>
+                <button class="control-btn minimize"></button>
+                <button class="control-btn maximize"></button>
+            </div>
+            <span class="window-title">Cat's Perspective - Daily Logger</span>
+        </div>
+
+        <div class="app-content">
+            <!-- HEADER -->
+            <div class="app-header">
+                <div class="header-left">
+                    <h2 class="app-title">Today's log</h2>
+                    <p class="app-date" id="currentDate">loading...</p>
+                </div>
+                <div class="header-right">
+                    <button class="refresh-btn" onclick="loadTodayData()">↻ refresh</button>
+                </div>
+            </div>
+
+            <!-- OVERVIEW STATS -->
+            <div class="stats-section">
+                <div class="stat-card">
+                    <div class="stat-icon">😴</div>
+                    <div class="stat-info">
+                        <span class="stat-label">mood</span>
+                        <span class="stat-value" id="todayMood">--</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">⚡</div>
+                    <div class="stat-info">
+                        <span class="stat-label">energy</span>
+                        <span class="stat-value" id="todayEnergy">--/10</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">💤</div>
+                    <div class="stat-info">
+                        <span class="stat-label">sleep</span>
+                        <span class="stat-value" id="todaySleep">-- hrs</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">📚</div>
+                    <div class="stat-info">
+                        <span class="stat-label">stress</span>
+                        <span class="stat-value" id="todayStress">--/10</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MAIN CONTENT GRID -->
+            <div class="content-grid">
+                <!-- MEALS -->
+                <div class="content-card">
+                    <h3 class="card-title">🍜 meals today</h3>
+                    <div class="meals-list" id="mealsList">
+                        <p class="loading-text">loading meals...</p>
+                    </div>
+                </div>
+
+                <!-- ACTIVITIES -->
+                <div class="content-card">
+                    <h3 class="card-title">✨ activities</h3>
+                    <div class="activities-list" id="activitiesList">
+                        <p class="loading-text">loading activities...</p>
+                    </div>
+                </div>
+
+                <!-- SYMPTOMS/HEALTH -->
+                <div class="content-card">
+                    <h3 class="card-title">⚠️ health notes</h3>
+                    <div class="symptoms-list" id="symptomsList">
+                        <p class="loading-text">checking health...</p>
+                    </div>
+                </div>
+
+                <!-- ACADEMIC -->
+                <div class="content-card">
+                    <h3 class="card-title">📖 academic status</h3>
+                    <div class="academic-info" id="academicInfo">
+                        <p class="loading-text">loading academic data...</p>
+                    </div>
+                </div>
+
+                <!-- NOTES -->
+                <div class="content-card full-width">
+                    <h3 class="card-title">📝 today's notes</h3>
+                    <div class="notes-content" id="notesContent">
+                        <p class="loading-text">loading notes...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/themes.js"></script>
+    <script src="../../assets/js/cats-perspective.js"></script>
+</body>
+</html>

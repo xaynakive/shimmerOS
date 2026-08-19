@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShimmerOS &gt; Scrapbook</title>
+    <link rel="stylesheet" href="../../assets/css/themes.css">
+    <link rel="stylesheet" href="../../assets/css/base.css">
+    <link rel="stylesheet" href="../../assets/css/scrapbook.css">
+    <script>
+        const savedTheme = localStorage.getItem('ShimmerOS_theme') || 'lavender-light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+<body>
+    <!-- MENU BAR -->
+    <div class="menu-bar">
+        <div class="menu-left">
+            <span class="menu-logo" aria-hidden="true">📸</span>
+            <span class="menu-item">Scrapbook</span>
+            <span class="menu-item">Edit</span>
+            <span class="menu-item">View</span>
+            <span class="menu-item">Help</span>
+        </div>
+        <div class="menu-right">
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/butterfly.png" class="menu-img" alt="Butterfly"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/heart.png" class="menu-img" alt="Heart"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/wifi-high.png" class="menu-img" alt="WiFi"></span>
+            <span class="menu-icon" id="menuTime">Loading...</span>
+        </div>
+    </div>
+
+    <!-- SCRAPBOOK WINDOW -->
+    <div class="window scrapbook-window">
+        <div class="window-bar">
+            <div class="window-controls">
+                <button class="control-btn close" aria-label="Close window" onclick="window.location.href='../../home/index.html'"></button>
+                <button class="control-btn minimize" aria-hidden="true" tabindex="-1"></button>
+                <button class="control-btn maximize" aria-hidden="true" tabindex="-1"></button>
+            </div>
+            <div class="window-title">Scrapbook</div>
+        </div>
+
+        <div class="paint">
+            <!-- LEFT PANE: all controls -->
+            <aside class="sidebar" aria-label="Tools and options">
+                <div class="panel">
+                    <span class="panel-label">Tools</span>
+                    <div class="tool-grid" role="group" aria-label="Tools">
+                        <button class="tool-btn" data-tool="brush"   aria-label="Brush"     aria-pressed="true"  title="Brush (B)">🖌️</button>
+                        <button class="tool-btn" data-tool="eraser"  aria-label="Eraser"    aria-pressed="false" title="Eraser (E)">🧽</button>
+                        <button class="tool-btn" data-tool="fill"    aria-label="Fill"      aria-pressed="false" title="Fill (F)">🪣</button>
+                        <button class="tool-btn" data-tool="line"    aria-label="Line"      aria-pressed="false" title="Line (L)">📏</button>
+                        <button class="tool-btn" data-tool="rect"    aria-label="Rectangle" aria-pressed="false" title="Rectangle (R)">▭</button>
+                        <button class="tool-btn" data-tool="ellipse" aria-label="Ellipse"   aria-pressed="false" title="Ellipse (O)">⬭</button>
+                        <button class="tool-btn" data-tool="sticker" aria-label="Sticker stamp" aria-pressed="false" title="Sticker (S)">✨</button>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <label for="sizeRange" class="panel-label">Size</label>
+                    <div class="size-group">
+                        <input type="range" id="sizeRange" min="1" max="60" value="6" aria-label="Brush size">
+                        <span id="sizeValue" class="size-value" aria-hidden="true">6</span>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <span class="panel-label">Colour</span>
+                    <div class="color-row">
+                        <div class="swatches" role="group" aria-label="Colors" id="swatches"></div>
+                        <label class="custom-color" title="Custom color">
+                            <span class="custom-color-plus" aria-hidden="true">+</span>
+                            <input type="color" id="customColor" value="#8b8fd9" aria-label="Pick a custom color">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <span class="panel-label">Paper</span>
+                    <div class="papers" role="group" aria-label="Paper colour" id="papers"></div>
+                </div>
+
+                <div class="panel sticker-panel">
+                    <span class="panel-label">Stickers</span>
+                    <span class="tray-hint">Pick one, then click the page 🐾</span>
+                    <div class="sticker-scroll" id="stickerScroll" role="group" aria-label="Stickers"></div>
+                </div>
+
+                <div class="panel actions-panel" role="group" aria-label="Actions">
+                    <button class="tool-btn" id="undoBtn" aria-label="Undo" title="Undo (Ctrl+Z)">↶</button>
+                    <button class="tool-btn" id="redoBtn" aria-label="Redo" title="Redo (Ctrl+Y)">↷</button>
+                    <button class="tool-btn" id="clearBtn" aria-label="Clear page" title="Clear page">🗑️</button>
+                    <button class="tool-btn save-btn" id="saveBtn" aria-label="Save as PNG" title="Save PNG">💾</button>
+                </div>
+            </aside>
+
+            <!-- RIGHT PANE: canvas -->
+            <div class="canvas-wrap">
+                <canvas id="board" width="900" height="560" role="img" aria-label="Scrapbook drawing canvas"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/scrapbook.js"></script>
+</body>
+</html>

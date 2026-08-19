@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShimmerOS</title>
+  <link rel="stylesheet" href="../assets/css/themes.css">
+  <link rel="stylesheet" href="../assets/css/lockscreen.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <script>
+    // Load saved theme
+    const savedTheme = localStorage.getItem('ShimmerOS_theme') || 'lavender-light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</head>
+<body class="lockscreen">
+
+  <!-- Background wallpaper -->
+  <div class="lockscreen-bg" id="lockscreenBg"></div>
+
+  <!-- Center content -->
+  <div class="lockscreen-center">
+    <div class="date-display" id="dateDisplay">Friday, August 18</div>
+    <div class="time-display" id="time">9:41</div>
+  </div>
+
+    <!-- Bottom section -->
+    <div class="lockscreen-bottom">
+        <button class="hint" id="unlockButton" type="button">Press Enter or tap to unlock</button>
+    </div>
+
+  <script src="../assets/js/lockscreen.js"></script>
+  <script src="../assets/js/rain.js"></script>
+</body>
+</html>

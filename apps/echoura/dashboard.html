@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echoura Dashboard - ShimmerOS</title>
+    <link rel="stylesheet" href="../../assets/css/themes.css">
+    <link rel="stylesheet" href="../../assets/css/base.css">
+    <link rel="stylesheet" href="../../assets/css/echoura.css">
+    <script>
+        const savedTheme = localStorage.getItem('ShimmerOS_theme') || 'lavender-light';
+        document. documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+<body>
+    <!-- MENU BAR -->
+    <div class="menu-bar">
+        <div class="menu-left">
+            <span class="menu-logo">🏫</span>
+            <span class="menu-item">Echoura</span>
+            <span class="menu-item">Edit</span>
+            <span class="menu-item">View</span>
+            <span class="menu-item">Window</span>
+            <span class="menu-item">Help</span>
+        </div>
+        <div class="menu-right">
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/butterfly.png" class="menu-img" alt="Butterfly"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/battery-empty.png" class="menu-img" alt="Battery"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/wifi-high.png" class="menu-img" alt="WiFi"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/bluetooth.png" class="menu-img" alt="Bluetooth"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/heart.png" class="menu-img" alt="Heart"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/user-circle.png" class="menu-img" alt="User"></span>
+            <span class="menu-icon" id="menuTime">Loading...</span>
+        </div>
+    </div>
+
+    <!-- DASHBOARD WINDOW -->
+    <div class="window" style="width: 1200px; max-height: 85vh;">
+        <div class="window-bar">
+            <div class="window-controls">
+                <button class="control-btn close" onclick="window.location.href='../../home/index.html'"></button>
+                <button class="control-btn minimize"></button>
+                <button class="control-btn maximize"></button>
+            </div>
+            <span class="window-title">Echoura Dashboard - @xaynakive</span>
+        </div>
+
+        <div class="app-content">
+            <div class="dashboard-layout">
+                
+                <!-- SIDEBAR -->
+                <div class="dashboard-sidebar">
+                    <div class="student-card">
+                        <div class="student-avatar"><img src="../../assets/imgs/userdata/hamster.gif" style="height: 100px;"></div>
+                        <h3 class="student-name">Xayna</h3>
+                        <p class="student-id">AR-08-26-42069</p>
+                        <p class="student-program">BS Computer Science</p>
+                    </div>
+
+                    <div class="nav-menu">
+                        <div class="nav-item active" onclick="showSection('overview')">
+                            <span class="nav-icon">📊</span>
+                            <span>overview</span>
+                        </div>
+                        <div class="nav-item" onclick="showSection('courses')">
+                            <span class="nav-icon">📚</span>
+                            <span>my courses</span>
+                        </div>
+                        <div class="nav-item" onclick="showSection('assignments')">
+                            <span class="nav-icon">📝</span>
+                            <span>assignments</span>
+                            <span class="badge">3</span>
+                        </div>
+                        <div class="nav-item" onclick="showSection('grades')">
+                            <span class="nav-icon">📈</span>
+                            <span>grades</span>
+                        </div>
+                        <div class="nav-item" onclick="showSection('schedule')">
+                            <span class="nav-icon">📅</span>
+                            <span>schedule</span>
+                        </div>
+                    </div>
+
+                    <div class="semester-info">
+                        <h4 class="info-title">current semester</h4>
+                        <p class="info-text">Fall 2024-25</p>
+                        <div class="progress-section">
+                            <span class="progress-label">semester progress</span>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar-fill" style="width: 75%"></div>
+                            </div>
+                            <span class="progress-text">75% complete</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MAIN CONTENT -->
+                <div class="dashboard-main">
+                    
+                    <!-- OVERVIEW SECTION -->
+                    <div id="section-overview" class="content-section active">
+                        <div class="section-header">
+                            <h2 class="section-title">dashboard overview</h2>
+                            <p class="section-subtitle">welcome back, xayna!  here's what's happening</p>
+                        </div>
+
+                        <!-- STATS CARDS -->
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon">📚</div>
+                                <div class="stat-info">
+                                    <span class="stat-value" id="totalCourses">--</span>
+                                    <span class="stat-label">enrolled courses</span>
+                                </div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon">📝</div>
+                                <div class="stat-info">
+                                    <span class="stat-value" id="pendingAssignments">--</span>
+                                    <span class="stat-label">pending assignments</span>
+                                </div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon">✅</div>
+                                <div class="stat-info">
+                                    <span class="stat-value" id="completedAssignments">--</span>
+                                    <span class="stat-label">completed</span>
+                                </div>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-icon">📈</div>
+                                <div class="stat-info">
+                                    <span class="stat-value" id="avgGrade">--</span>
+                                    <span class="stat-label">average grade</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- URGENT ASSIGNMENTS -->
+                        <div class="content-card">
+                            <h3 class="card-title">⚠️ urgent assignments</h3>
+                            <div class="assignments-list" id="urgentAssignments">
+                                <p class="loading-text">loading... </p>
+                            </div>
+                        </div>
+
+                        <!-- RECENT ACTIVITY -->
+                        <div class="content-card">
+                            <h3 class="card-title">📊 recent activity</h3>
+                            <div class="activity-timeline" id="activityTimeline">
+                                <p class="loading-text">loading...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COURSES SECTION -->
+                    <div id="section-courses" class="content-section">
+                        <div class="section-header">
+                            <h2 class="section-title">my courses</h2>
+                            <p class="section-subtitle">fall 2024-25 semester</p>
+                        </div>
+
+                        <div class="courses-grid" id="coursesGrid">
+                            <p class="loading-text">loading courses...</p>
+                        </div>
+                    </div>
+
+                    <!-- ASSIGNMENTS SECTION -->
+                    <div id="section-assignments" class="content-section">
+                        <div class="section-header">
+                            <h2 class="section-title">all assignments</h2>
+                            <div class="filter-tabs">
+                                <button class="filter-tab active" onclick="filterAssignments('all')">all</button>
+                                <button class="filter-tab" onclick="filterAssignments('pending')">pending</button>
+                                <button class="filter-tab" onclick="filterAssignments('completed')">completed</button>
+                            </div>
+                        </div>
+
+                        <div class="assignments-detailed" id="assignmentsDetailed">
+                            <p class="loading-text">loading assignments...</p>
+                        </div>
+                    </div>
+
+                    <!-- GRADES SECTION -->
+                    <div id="section-grades" class="content-section">
+                        <div class="section-header">
+                            <h2 class="section-title">grades & performance</h2>
+                            <p class="section-subtitle">your academic performance overview</p>
+                        </div>
+
+                        <div class="grades-container" id="gradesContainer">
+                            <p class="loading-text">loading grades...</p>
+                        </div>
+                    </div>
+
+                    <!-- SCHEDULE SECTION -->
+                    <div id="section-schedule" class="content-section">
+                        <div class="section-header">
+                            <h2 class="section-title">class schedule</h2>
+                            <p class="section-subtitle">your weekly timetable</p>
+                        </div>
+
+                        <div class="schedule-table" id="scheduleTable">
+                            <p class="loading-text">loading schedule...</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/themes.js"></script>
+    <script src="../../assets/js/echoura/dashboard.js"></script>
+</body>
+</html>

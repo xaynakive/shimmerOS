@@ -1,0 +1,157 @@
+{
+  "user": "xayna",
+  "app_name": "lemonure",
+  "tagline": "ShimmerOS social media • digital wellbeing focused",
+  "usage_stats": {
+    "daily_time_spent": "2 hours 15 minutes",
+    "posts_today": 3,
+    "interactions": 47,
+    "mood":  "creative but stressed"
+  },
+  "feed":  [
+    {
+      "id": 1,
+      "author": "xayna",
+      "username": "@xaynakive",
+      "timestamp": "2025-01-04 11:32 PM",
+      "content": "11pm: have presentation at 11am tomorrow\n\nstill need to:  build 3 apps, create json files, integrate AI, do handwritten assignment\n\nwhy am i like this? 😭",
+      "likes": 12,
+      "comments": 5,
+      "mood": "stressed",
+      "tags": ["deadlines", "chaos", "procrastination"]
+    },
+    {
+      "id": 2,
+      "author": "xayna",
+      "username": "@xaynakive",
+      "timestamp": "2025-01-04 8:47 PM",
+      "content":  "currently: making json files for cat's perspective\n\nalso currently: eating spicy ramen for the 3rd time today\n\nmy stomach:  😭\nme: worth it 🌶️",
+      "likes": 28,
+      "comments": 8,
+      "mood": "chaotic",
+      "tags": ["food", "coding", "bad decisions"]
+    },
+    {
+      "id": 3,
+      "author": "xayna",
+      "username": "@xaynakive",
+      "timestamp": "2025-01-04 3:15 PM",
+      "content": "glassmorphism is not just a design trend, it's a lifestyle ✨\n\n*applies blur(20px) to entire existence*",
+      "likes": 45,
+      "comments": 12,
+      "mood": "creative",
+      "tags": ["design", "aesthetic", "ShimmerOS"]
+    },
+    {
+      "id":  4,
+      "author":  "xayna",
+      "username": "@xaynakive",
+      "timestamp": "2025-01-03 5:30 AM",
+      "content": "just finished 30 pages of breeze AI documentation at 5am\n\neyes:  hurting\nbrain: melting\nstomach: regretting the ramen\n\nbut it's DONE 🎉",
+      "likes": 67,
+      "comments": 15,
+      "mood": "accomplished",
+      "tags": ["breeze", "documentation", "5am grind"]
+    },
+    {
+      "id": 5,
+      "author": "xayna",
+      "username":  "@xaynakive",
+      "timestamp": "2025-01-02 11:28 PM",
+      "content":  "hot take: technology should feel like a warm hug, not a cold interface\n\nthat's why i'm building ShimmerOS 💙",
+      "likes": 89,
+      "comments": 23,
+      "mood": "reflective",
+      "tags": ["philosophy", "ShimmerOS", "design thinking"]
+    },
+    {
+      "id":  6,
+      "author":  "catcoder",
+      "username": "@catcoder",
+      "timestamp": "2025-01-04 10:15 PM",
+      "content": "anyone else coding right now instead of sleeping?\n\n*crickets*\n\noh wait everyone's asleep like normal people",
+      "likes": 34,
+      "comments": 9,
+      "mood": "lonely",
+      "tags": ["night coding", "insomnia"]
+    },
+    {
+      "id":  7,
+      "author":  "haze",
+      "username": "@sundayaroundnoon",
+      "timestamp":  "2025-01-04 9:42 PM",
+      "content":  "just discovered @xaynakive's portfolio and WOW\n\nthe 3D rotating cube? ?  the glassmorphism? ? \n\nteach me your ways 🙏",
+      "likes": 52,
+      "comments": 11,
+      "mood": "inspired",
+      "tags": ["portfolio inspiration", "web design"]
+    },
+    {
+      "id": 8,
+      "author": "meow",
+      "username": "@meow",
+      "timestamp": "2025-01-04 7:30 PM",
+      "content":  "PSA: eating spicy ramen 3 times a day is not a personality trait\n\n@xaynakive this is an intervention",
+      "likes": 78,
+      "comments": 19,
+      "mood": "concerned",
+      "tags": ["food", "intervention", "spicy"]
+    },
+    {
+      "id": 9,
+      "author": "h",
+      "username": "@him",
+      "timestamp": "2025-01-04 6:15 PM",
+      "content":  "me: has assignment due tomorrow\n\nalso me: let me redesign my entire portfolio first",
+      "likes": 156,
+      "comments": 34,
+      "mood": "relatable",
+      "tags": ["procrastination", "student life"]
+    },
+    {
+      "id": 10,
+      "author": "breeze",
+      "username": "@breeze",
+      "timestamp": "2025-01-04 5:00 PM",
+      "content":  "gentle reminder: you've been coding for 6 hours straight\n\ntake a break. drink water. maybe eat something that's not spicy ramen?  💙",
+      "likes": 23,
+      "comments": 7,
+      "mood": "caring",
+      "tags": ["self care", "AI companion"]
+    }
+  ],
+  "trending_tags": [
+    "#ShimmerOS",
+    "#glassmorphism", 
+    "#3amcoding",
+    "#spicyramen",
+    "#breeze",
+    "#deadlinevibes"
+  ],
+  "notifications": [
+    {
+      "type": "like",
+      "user": "haze",
+      "content": "liked your post about glassmorphism",
+      "time": "10 mins ago"
+    },
+    {
+      "type": "comment",
+      "user": "meow",
+      "content":  "commented on your ramen post",
+      "time":  "2 hours ago"
+    },
+    {
+      "type": "mention",
+      "user": "catcoder",
+      "content":  "mentioned you in a post",
+      "time": "3 hours ago"
+    }
+  ],
+  "wellbeing":  {
+    "time_today": "2 hours 15 minutes",
+    "time_limit": "3 hours",
+    "status": "under limit ✓",
+    "reminder":  "you're doing good!  take a screen break soon 💙"
+  }
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lemonure - ShimmerOS</title>
+    <link rel="stylesheet" href="../../assets/css/themes.css">
+    <link rel="stylesheet" href="../../assets/css/base.css">
+    <link rel="stylesheet" href="../../assets/css/lemonure.css">
+    <script>
+        const savedTheme = localStorage.getItem('ShimmerOS_theme') || 'lavender-light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+<body>
+    <!-- MENU BAR -->
+    <div class="menu-bar">
+        <div class="menu-left">
+            <span class="menu-logo">🍋</span>
+            <span class="menu-item">Lemonure</span>
+            <span class="menu-item">Edit</span>
+            <span class="menu-item">View</span>
+            <span class="menu-item">Window</span>
+            <span class="menu-item">Help</span>
+        </div>
+        <div class="menu-right">
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/butterfly.png" class="menu-img" alt="Butterfly"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/battery-empty.png" class="menu-img" alt="Battery"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/wifi-high.png" class="menu-img" alt="WiFi"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/bluetooth.png" class="menu-img" alt="Bluetooth"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/heart.png" class="menu-img" alt="Heart"></span>
+            <span class="menu-icon"><img src="../../assets/imgs/system-icons/user-circle.png" class="menu-img" alt="User"></span>
+            <span class="menu-icon" id="menuTime">Loading...</span>
+        </div>
+    </div>
+
+    <!-- MAIN WINDOW -->
+    <div class="window" style="width: 1000px; max-height: 85vh;">
+        <div class="window-bar">
+            <div class="window-controls">
+                <button class="control-btn close" onclick="window.location.href='../../home/index.html'"></button>
+                <button class="control-btn minimize"></button>
+                <button class="control-btn maximize"></button>
+            </div>
+            <span class="window-title">Lemonure - ShimmerOS Social</span>
+        </div>
+
+        <div class="app-content">
+            <!-- MAIN LAYOUT -->
+            <div class="lemonure-layout">
+                
+                <!-- LEFT SIDEBAR -->
+                <div class="sidebar">
+                    <div class="profile-card">
+                        <div class="profile-avatar"><img src="../../assets/imgs/userdata/pfp.png" style="width: 70px; border-radius: 50%;"></div>
+                        <h3 class="profile-name">Xayna</h3>
+                        <p class="profile-username">@xaynakive</p>
+                    </div>
+
+                    <div class="nav-menu">
+                        <div class="nav-item active">
+                            <span class="nav-icon">🏠</span>
+                            <span>feed</span>
+                        </div>
+                        <div class="nav-item">
+                            <span class="nav-icon">🔥</span>
+                            <span>trending</span>
+                        </div>
+                        <div class="nav-item">
+                            <span class="nav-icon">🔔</span>
+                            <span>notifications</span>
+                            <span class="notif-badge">3</span>
+                        </div>
+                        <div class="nav-item">
+                            <span class="nav-icon">💙</span>
+                            <span>saved</span>
+                        </div>
+                    </div>
+
+                    <div class="wellbeing-card">
+                        <h4 class="wellbeing-title">digital wellbeing</h4>
+                        <div class="wellbeing-stat">
+                            <span class="wellbeing-label">today</span>
+                            <span class="wellbeing-value" id="timeToday">--</span>
+                        </div>
+                        <div class="wellbeing-progress">
+                            <div class="wellbeing-bar" id="wellbeingBar"></div>
+                        </div>
+                        <p class="wellbeing-status" id="wellbeingStatus">loading...</p>
+                    </div>
+                </div>
+
+                <!-- CENTER FEED -->
+                <div class="main-feed">
+                    <!-- POST COMPOSER -->
+                    <div class="composer-card">
+                        <div class="composer-avatar"><img src="../../assets/imgs/userdata/pfp.png" style="width: 40px; border-radius: 50%;"></div>
+                        <input type="text" class="composer-input" placeholder="what's on your mind, xayna?" id="composeInput">
+                        <button class="post-btn" onclick="alert('Post feature coming soon!  💙')">post</button>
+                    </div>
+
+                    <!-- FEED -->
+                    <div class="feed-container" id="feedContainer">
+                        <p class="loading-text">loading feed...</p>
+                    </div>
+                </div>
+
+                <!-- RIGHT SIDEBAR -->
+                <div class="right-sidebar">
+                    <!-- TRENDING TAGS -->
+                    <div class="trending-card">
+                        <h4 class="card-heading">trending in ShimmerOS</h4>
+                        <div class="trending-list" id="trendingList">
+                            <p class="loading-text">loading...</p>
+                        </div>
+                    </div>
+
+                    <!-- NOTIFICATIONS -->
+                    <div class="notifications-card">
+                        <h4 class="card-heading">notifications</h4>
+                        <div class="notifications-list" id="notificationsList">
+                            <p class="loading-text">loading...</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/themes.js"></script>
+    <script src="../../assets/js/lemonure.js"></script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+body {
+    padding: 26px 0 0 0;
+}
+
+.window {
+    top: 80px;
+    overflow-y: hidden;
+}
+
+.app-content {
+    padding: 24px;
+    max-height: calc(80vh - 35px);
+    overflow-y: auto;
+}
+
+/* HEADER */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom:  1px solid var(--widget-border);
+}
+
+.app-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 4px 0;
+}
+
+.app-date {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.refresh-btn {
+    padding: 6px 14px;
+    background: var(--widget-glass);
+    border: 1px solid var(--widget-border);
+    border-radius:  8px;
+    color: var(--text-primary);
+    font-size: 12px;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.refresh-btn:hover {
+    background:  var(--widget-bg-hover);
+}
+
+/* STATS SECTION */
+.stats-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom:  24px;
+}
+
+.stat-card {
+    background:  var(--widget-glass);
+    border: 1px solid var(--widget-border);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: var(--transition-fast);
+}
+
+.stat-card:hover {
+    background: var(--widget-bg-hover);
+    transform: translateY(-2px);
+}
+
+.stat-icon {
+    font-size: 24px;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-value {
+    font-size: 16px;
+    font-weight:  600;
+    color: var(--text-primary);
+}
+
+/* CONTENT GRID */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.content-card {
+    background: var(--widget-glass);
+    border: 1px solid var(--widget-border);
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.content-card.full-width {
+    grid-column: 1 / -1;
+}
+
+.card-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 12px 0;
+}
+
+/* MEALS LIST */
+.meals-list,
+.activities-list,
+.symptoms-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.meal-item,
+.activity-item,
+.symptom-item {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+.meal-time,
+.activity-time {
+    color: var(--text-muted);
+    font-size: 11px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.meal-food,
+.activity-name {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.meal-notes,
+.activity-mood {
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 4px;
+}
+
+.symptom-type {
+    color: #ff6b6b;
+    font-weight: 600;
+}
+
+.symptom-severity {
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+.symptom-cause {
+    color: var(--text-secondary);
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* ACADEMIC INFO */
+.academic-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.academic-stat {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.academic-label {
+    color: var(--text-secondary);
+}
+
+.academic-value {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* NOTES */
+.notes-content {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+}
+
+/* LOADING TEXT */
+.loading-text {
+    color: var(--text-muted);
+    font-size: 12px;
+    text-align:  center;
+    padding: 20px;
+}
+
+/* SCROLLBAR */
+.app-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.app-content::-webkit-scrollbar-thumb {
+    background: var(--color-primary-light);
+    border-radius:  4px;
+}
+
+.app-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .stats-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}

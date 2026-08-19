@@ -1,0 +1,81 @@
+{
+  "student":  "Xayna",
+  "semester": "AR-08-26-42069",
+  "courses": [
+    {
+      "code": "WEB-301",
+      "name": "Web",
+      "assignments": [
+        {
+          "id": "WEB-A1",
+          "title": "Student Portfolio & Feedback Portal",
+          "due_date":  "2025-01-05",
+          "status": "in_progress",
+          "completion":  85,
+          "stress_level": 7,
+          "notes": "building glassmorphism portfolio with 3D cube, almost done",
+          "time_spent": "12 hours"
+        },
+        {
+          "id": "WEB-A2",
+          "title": "Responsive Echoura Portal",
+          "due_date": "2024-12-28",
+          "status": "completed",
+          "completion": 100,
+          "grade": 30,
+          "max_grade": 30,
+          "notes": "completed bootstrap university portal"
+        }
+      ]
+    },
+    {
+      "code": "AI-405",
+      "name": "Artificial Intelligence",
+      "assignments": [
+        {
+          "id":  "AI-PROJ",
+          "title": "ShimmerOS with Breeze AI Integration",
+          "due_date":  "2025-01-05",
+          "status": "in_progress",
+          "completion":  70,
+          "stress_level":  9,
+          "notes": "presentation tomorrow at 11am, need apps + json + breeze working",
+          "time_spent":  "40+ hours"
+        },
+        {
+          "id": "AI-DOC",
+          "title": "Breeze AI Documentation",
+          "due_date": "2025-01-04",
+          "status": "completed",
+          "completion": 100,
+          "notes": "completed 30+ pages at 5am, currently recovering",
+          "time_spent": "8 hours"
+        }
+      ]
+    },
+    {
+      "code": "CS-350",
+      "name": "Database Systems",
+      "assignments": [
+        {
+          "id":  "DB-HW",
+          "title": "Handwritten Assignment",
+          "due_date": "2025-01-05",
+          "status": "not_started",
+          "completion":  0,
+          "stress_level": 10,
+          "notes": "HAVE TO DO THIS TONIGHT ALONGSIDE EVERYTHING ELSE",
+          "estimated_time": "3 hours"
+        }
+      ]
+    }
+  ],
+  "overall_stats": {
+    "total_assignments": 6,
+    "completed": 2,
+    "in_progress":  3,
+    "not_started": 1,
+    "average_stress": 8,
+    "sleep_deprivation_level": "critical"
+  }
+}

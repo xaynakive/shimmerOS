@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - ShimmerOS</title>
+  <link rel="stylesheet" href="../assets/css/themes.css">
+  <link rel="stylesheet" href="../assets/css/login.css">
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <script>
+    // Load saved theme
+    const savedTheme = localStorage.getItem('ShimmerOS_theme') || 'lavender-light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+</head>
+<body class="login">
+
+  <!-- Background -->
+  <div class="login-bg"></div>
+
+  <!-- Login box -->
+  <div class="login-box">
+    <img src="../assets/imgs/userdata/hamster.gif" class="pfp" alt="User">
+    
+    <div class="username">xaynakive</div>
+    
+    <div class="password-container">
+      <button class="back-btn" onclick="window.location.href='../index.html'">
+        <span>←</span>
+      </button>
+      
+      <input 
+        type="password" 
+        id="password" 
+        class="password-input" 
+        placeholder="Enter Password"
+        autocomplete="off"
+      >
+      
+      <button class="hint-btn">
+        <span>? </span>
+      </button>
+    </div>
+    <p class="login-status" id="loginStatus" role="status" aria-live="polite"></p>
+    <button class="enter-btn" onclick="checkLogin()">Enter</button>
+  </div>
+
+  <script src="../assets/js/login.js"></script>
+</body>
+</html>

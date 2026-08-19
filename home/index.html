@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShimmerOS</title>
+    <link rel="stylesheet" href="../assets/css/themes.css"> 
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/home.css">
+    <script>
+        const savedTheme = localStorage.getItem('ShimmerOS_theme') || 'lavender-light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+<body>
+    <!-- MENU BAR -->
+    <div class="menu-bar">
+        <div class="menu-left">
+            <span class="menu-logo">🎬</span>
+            <span class="menu-item">Finder</span>
+            <span class="menu-item">Edit</span>
+            <span class="menu-item">View</span>
+            <span class="menu-item">Window</span>
+            <span class="menu-item">Help</span>
+        </div>
+        <div class="menu-right">
+            <span class="menu-icon"><img src="../assets/imgs/system-icons/butterfly.png" class="menu-img" alt="Butterfly"></span>
+            <span class="menu-icon"><img src="../assets/imgs/system-icons/battery-empty.png" class="menu-img" alt="Battery"></span>
+            <span class="menu-icon"><img src="../assets/imgs/system-icons/wifi-high.png" class="menu-img" alt="WiFi"></span>
+            <span class="menu-icon"><img src="../assets/imgs/system-icons/bluetooth.png" class="menu-img" alt="Bluetooth"></span>
+            <span class="menu-icon"><img src="../assets/imgs/system-icons/heart.png" class="menu-img" alt="Heart"></span>
+            <span class="menu-icon"><img src="../assets/imgs/system-icons/user-circle.png" class="menu-img" alt="User"></span>
+            <span class="menu-icon" id="menuTime">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Desktop Canvas -->
+    <div class="desktop">
+
+        <!-- LEFT SECTION: Calendar + Desktop Icons -->
+        <div class="left-section">
+            
+            <!-- Calendar Widget -->
+            <div class="widget calendar-widget">
+                <div class="calendar-header">
+                    <button class="calendar-nav" id="prevMonth">←</button>
+                    <span class="calendar-title" id="calendarMonth">JUNE 2024</span>
+                    <button class="calendar-nav" id="nextMonth">→</button>
+                </div>
+                <div class="calendar-weekdays">
+                    <div class="weekday">Mon</div>
+                    <div class="weekday">Tue</div>
+                    <div class="weekday">Wed</div>
+                    <div class="weekday">Thu</div>
+                    <div class="weekday">Fri</div>
+                    <div class="weekday">Sat</div>
+                    <div class="weekday">Sun</div>
+                </div>
+                <div class="calendar-days" id="calendarDays"></div>
+            </div>
+
+            <!-- Desktop Icons -->
+            <div class="desktop-icons-container">
+                <div class="desktop-icons-grid">
+                    <div class="desktop-icon">
+                        <img src="../assets/imgs/home-icons/cats-perspective.png" alt="Cats Perspective" class="icon-img" id="icon-cats-perspective" onclick="window.location.href='../apps/cats-perspective/index.html'">
+                        <span class="icon-label">Perspective</span>
+                    </div>
+
+                    <div class="desktop-icon">
+                        <img src="../assets/imgs/home-icons/calculator.png" alt="Calculator" class="icon-img" id="icon-calculator" onclick="window.location.href='../apps/calculator/index.html'">
+                        <span class="icon-label">Calculator</span>
+                    </div>
+
+                    <div class="desktop-icon">
+                        <img src="../assets/imgs/home-icons/Echoura.png" alt="Echoura" class="icon-img" id="icon-Echoura" onclick="window.location.href='../apps/echoura/index.html'">
+                        <span class="icon-label">Echoura</span>
+                    </div>
+
+                    <div class="desktop-icon">
+                        <img src="../assets/imgs/home-icons/lemonure.png" alt="Lemonure" class="icon-img" id="icon-lemonure" onclick="window.location.href='../apps/lemonure/index.html'">
+                        <span class="icon-label">Lemonure</span>
+                    </div>
+
+                    <div class="desktop-icon">
+                        <img src="../assets/imgs/home-icons/mailbox.png" alt="Mailbox" class="icon-img" id="icon-mailbox" onclick="window.location.href='../apps/mailbox/index.html'">
+                        <span class="icon-label">Mailbox</span>
+                    </div>
+
+                    <div class="desktop-icon">
+                        <img src="../assets/imgs/home-icons/scrapbook.png" alt="Scrapbook" class="icon-img" id="icon-scrapbook" onclick="window.location.href='../apps/scrapbook/index.html'">
+                        <span class="icon-label">Scrapbook</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- MIDDLE SECTION: Widgets -->
+        <div class="middle-section">
+
+            <div class="widget-row">
+                <div class="widget photo-widget-large">
+                    <img src="../assets/imgs/userdata/lavender/sq.jpeg" alt="Photo">
+                </div>
+
+                <div class="widget note-widget">
+                    <p class="note-text">
+                        <span class="note-title">Notice</span><br>
+                        <span class="note-subtitle">If reality</span><br>
+                        <span class="note-subtitle">appears blurry,</span><br>
+                        <span class="note-subtitle">you're probably</span><br>
+                        <span class="note-subtitle">getting closer</span><br>
+                        <span class="note-footer">— Observatory</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="widget todo-widget">
+                <div class="todo-header">
+                    <span class="todo-icon">📋</span>
+                    <span class="todo-title">to-do: </span>
+                </div>
+                <div class="todo-list">
+                    <div class="todo-item">
+                        <input type="checkbox" id="todo1">
+                        <label for="todo1">catalog today's memories</label>
+                    </div>
+                    <div class="todo-item">
+                        <input type="checkbox" id="todo2">
+                        <label for="todo2">find another sunset</label>
+                    </div>
+                    <div class="todo-item">
+                        <input type="checkbox" id="todo3">
+                        <label for="todo3">accidentally become iconic</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="widget weather-widget">
+                <div class="weather-top">
+                    <div class="weather-left">
+                        <div class="weather-location" id="weatherLocation">Loading...</div>
+                        <div class="weather-temp" id="weatherTemp">--°</div>
+                    </div>
+
+                    <div class="weather-right">
+                        <div class="weather-icon-large" id="weatherIcon">☁️</div>
+                        <div class="weather-condition" id="weatherCondition">--</div>
+                        <div class="weather-range">
+                            <span>H: <span id="weatherHigh">--</span>°</span>
+                            <span> • </span>
+                            <span>L:  <span id="weatherLow">--</span>°</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weather-hourly" id="weatherHourly"></div>
+            </div>
+
+        </div>
+
+        <!-- RIGHT SECTION: Photos + Decorations -->
+        <div class="right-section">
+            
+            <div class="polaroid-stack">
+                <div class="polaroid" style="transform: rotate(-12deg); z-index: 2; top: 20px; left: -110px;">
+                    <img src="../assets/imgs/userdata/lavender/p1.jpeg" alt="Photo 1">
+                </div>
+                <div class="polaroid" style="transform: rotate(12deg) translate(-30px, 50px); z-index: 3; top:  150px; left: 150px;">
+                    <img src="../assets/imgs/userdata/lavender/p2.jpeg" alt="Photo 2">
+                </div>
+            </div>
+
+            <div class="flower-cluster" style="top: -10px; left: 0px; z-index: 4; transform: rotate(12deg)">
+                <img src="../assets/imgs/userdata/lavender/top.png" alt="Decoration" class="flower-img">
+            </div>
+
+            <div class="flower-cluster" style="bottom: 150px; right: 400px; z-index: 4; transform: rotate(-12deg) translate(-30px, 50px); width: 60px;">
+                <img src="../assets/imgs/userdata/lavender/bottom.jpeg" alt="Decoration" class="flower-img">
+            </div>
+
+            <div class="star" style="top: 120px; right: 80px;">✦</div>
+            <div class="star" style="top: 200px; right: 150px;">✦</div>
+            <div class="star" style="top: 150px; right: 60px;">✦</div>
+            <div class="star" style="top: 180px; right: 30px;">✦</div>
+
+        </div>
+
+    </div>
+
+    <!-- macOS Dock -->
+    <div class="dock">
+        <div class="dock-app" onclick="window.location.href='../apps/breeze/index.html'">
+            <img src="../assets/imgs/home-icons/breeze.png" alt="Breeze" class="dock-icon-img" id="dock-breeze">
+        </div>
+        <div class="dock-app" onclick="window.location.href='../apps/memoir/index.html'">
+            <img src="../assets/imgs/home-icons/memoir.png" alt="Memoir" class="dock-icon-img" id="dock-memoir">
+        </div>
+        <div class="dock-app" onclick="window.location.href='../apps/scrapbook/index.html'">
+            <img src="../assets/imgs/home-icons/scrapbook.png" alt="Scrapbook" class="dock-icon-img" id="dock-scrapbook">
+        </div>
+        <div class="dock-app" onclick="window.location.href='../apps/lemonure/index.html'">
+            <img src="../assets/imgs/home-icons/lemonure.png" alt="Lemonure" class="dock-icon-img" id="dock-lemonure">
+        </div>
+        <div class="dock-app" onclick="window.location.href='../home/index.html'">
+            <img src="../assets/imgs/home-icons/home.png" alt="Home" class="dock-icon-img" id="dock-home">
+        </div>
+        <div class="dock-separator"></div>
+        <div class="dock-app" onclick="window.location.href='../index.html'">
+            <img src="../assets/imgs/home-icons/lock.png" alt="Lock" class="dock-icon-img" id="dock-lock">
+        </div>
+        <div class="dock-app" onclick="document.getElementById('settingsOverlay').classList.add('active')">
+            <img src="../assets/imgs/home-icons/settings.png" alt="Settings" class="dock-icon-img" id="dock-settings">
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="settings-overlay" id="settingsOverlay">
+        <div class="settings-window">
+            <div class="window-bar">
+                <div class="window-controls">
+                    <button class="control-btn close" id="closeSettings"></button>
+                    <button class="control-btn minimize"></button>
+                    <button class="control-btn maximize"></button>
+                </div>
+                <span class="window-title">Settings</span>
+            </div>
+
+            <div class="settings-content">
+                <h2 class="settings-heading">Choose Your Theme</h2>
+                
+                <div class="themes-grid">
+                    <div class="theme-card" data-theme="lavender-light">
+                        <div class="theme-preview" style="background:  linear-gradient(135deg, #b8baf1, #d6d8ff);"></div>
+                        <span class="theme-name">Lavender</span>
+                    </div>
+
+                    <div class="theme-card" data-theme="rose-light">
+                        <div class="theme-preview" style="background: linear-gradient(135deg, #ffc1cc, #ffe0e5);"></div>
+                        <span class="theme-name">Rose</span>
+                    </div>
+
+                    <div class="theme-card" data-theme="blush-light">
+                        <div class="theme-preview" style="background: linear-gradient(135deg, #fff0f3, #fff5f7);"></div>
+                        <span class="theme-name">Blush</span>
+                    </div>
+
+                    <div class="theme-card" data-theme="pearl-light">
+                        <div class="theme-preview" style="background: linear-gradient(135deg, #ffffff, #fafaff);"></div>
+                        <span class="theme-name">Pearl</span>
+                    </div>
+
+                    <div class="theme-card" data-theme="sky-light">
+                        <div class="theme-preview" style="background: linear-gradient(135deg, #d4f1f9, #e6f7ff);"></div>
+                        <span class="theme-name">Sky</span>
+                    </div>
+
+                    <div class="theme-card" data-theme="sage-light">
+                        <div class="theme-preview" style="background: linear-gradient(135deg, #e8f0df, #f0f7eb);"></div>
+                        <span class="theme-name">Sage</span>
+                    </div>
+
+                    <div class="theme-card" data-theme="void-light">
+                        <div class="theme-preview" style="background: linear-gradient(135deg, #f3f4f6, #f9fafb);"></div>
+                        <span class="theme-name">Void</span>
+                    </div>
+                </div>
+
+                <div class="dark-mode-toggle">
+                    <span class="toggle-label">Dark Mode</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="darkModeToggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+
+                <div class="current-theme">
+                    Current:  <span id="currentThemeName">Lavender</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/home.js"></script>
+    <script src="../assets/js/rain.js"></script>
+</body>
+</html>

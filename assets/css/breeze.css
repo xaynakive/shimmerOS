@@ -1,0 +1,310 @@
+body {
+    padding: 26px 0 0 0;
+}
+
+.window {
+    top: 60px;
+    overflow-y: hidden;
+}
+
+.app-content {
+    padding: 0;
+    max-height: calc(85vh - 35px);
+    overflow: hidden;
+}
+
+/* LAYOUT */
+.breeze-layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    height: calc(85vh - 35px);
+}
+
+/* ===== SIDEBAR ===== */
+.breeze-sidebar {
+    background: var(--widget-glass);
+    border-right: 1px solid var(--widget-border);
+    padding: 24px;
+    overflow-y:  auto;
+}
+
+/* BREEZE AVATAR CARD */
+.breeze-avatar-card {
+    text-align: center;
+    padding: 24px;
+    background: linear-gradient(135deg, 
+        rgba(255, 107, 157, 0.1), 
+        rgba(167, 139, 250, 0.1),
+        rgba(135, 206, 235, 0.1)
+    );
+    border-radius:  20px;
+    margin-bottom:  24px;
+    position:  relative;
+    overflow: hidden;
+}
+
+.breeze-avatar {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 16px auto;
+    position: relative;
+}
+
+.avatar-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle,
+        rgba(255, 107, 157, 0.3),
+        rgba(167, 139, 250, 0.2),
+        transparent
+    );
+    border-radius: 50%;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+}
+
+.avatar-center {
+    position: absolute;
+    top: 50%;
+    left:  50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, 
+        var(--color-primary), 
+        var(--color-primary-light),
+        var(--purple)
+    );
+    border-radius:  50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    box-shadow: 0 8px 32px rgba(255, 107, 157, 0.4);
+}
+
+.avatar-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.particle {
+    position: absolute;
+    font-size: 20px;
+    animation: float 4s ease-in-out infinite;
+}
+
+.particle:nth-child(1) {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.particle:nth-child(2) {
+    top: 20%;
+    right: 10%;
+    animation-delay: 1s;
+}
+
+.particle:nth-child(3) {
+    bottom: 20%;
+    left: 15%;
+    animation-delay: 2s;
+}
+
+.particle:nth-child(4) {
+    bottom: 10%;
+    right:  15%;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+    50% { transform:  translateY(-20px) rotate(180deg); opacity: 1; }
+}
+
+/* FIXED:  Add background-clip */
+.breeze-name {
+    font-size: 28px;
+    font-weight: 700;
+    background: linear-gradient(135deg, 
+        var(--color-primary), 
+        var(--purple),
+        #87CEEB
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0 0 6px 0;
+    text-transform: lowercase;
+}
+
+.breeze-tagline {
+    font-size:  13px;
+    color: var(--text-muted);
+    margin: 0 0 16px 0;
+    font-style: italic;
+}
+
+.breeze-status {
+    display:  inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #00ff9f;
+    border-radius:  50%;
+    animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.status-text {
+    color: var(--text-secondary);
+}
+
+/* CONTEXT CARD */
+.context-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom:  20px;
+}
+
+.context-title {
+    font-size: 13px;
+    font-weight:  600;
+    color: var(--text-secondary);
+    margin: 0 0 12px 0;
+    text-transform: lowercase;
+}
+
+.context-items {
+    display:  flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.context-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+}
+
+.context-icon {
+    font-size: 20px;
+}
+
+.context-info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.context-label {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.context-value {
+    font-size:  13px;
+    font-weight: 600;
+    color: var(--color-primary-light);
+}
+
+/* QUICK PROMPTS */
+.quick-prompts {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.prompts-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 0 0 12px 0;
+    text-transform: lowercase;
+}
+
+.prompt-btn {
+    width: 100%;
+    padding:  12px;
+    background:  rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--widget-border);
+    border-radius: 10px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 8px;
+    font-family: inherit;
+}
+
+.prompt-btn:hover {
+    background: var(--color-primary-light);
+    color: var(--text-primary);
+    transform: translateX(4px);
+}
+
+/* ===== CHAT CONTAINER (CRITICAL FIX FOR BOTPRESS) ===== */
+.chat-container {
+    width: 100%;
+    height:  100%;
+    position: relative;
+    background: linear-gradient(180deg,
+        rgba(255, 107, 157, 0.03),
+        rgba(167, 139, 250, 0.03),
+        rgba(135, 206, 235, 0.03)
+    );
+}
+
+/* CRITICAL:  Make webchat visible and fill space */
+#webchat {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    position: relative !important;
+}
+
+/* SCROLLBAR */
+.breeze-sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.breeze-sidebar::-webkit-scrollbar-thumb {
+    background: var(--color-primary-light);
+    border-radius: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .breeze-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .breeze-sidebar {
+        display: none;
+    }
+}
