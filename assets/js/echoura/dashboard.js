@@ -16,7 +16,7 @@ updateTime();
 function checkAuth() {
     const loggedIn = localStorage.getItem('echoura_logged_in');
     if (! loggedIn) {
-        window.location.href = 'login.html';
+        window.location.href = 'index.html';
     }
 }
 checkAuth();
@@ -25,7 +25,7 @@ checkAuth();
 function logout() {
     localStorage.removeItem('echoura_logged_in');
     localStorage.removeItem('echoura_student_id');
-    window.location.href = 'login.html';
+    window.location.href = 'index.html';
 }
 
 // Section navigation
