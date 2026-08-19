@@ -25,8 +25,8 @@ function handleLogin(event) {
     
     if (studentId === CORRECT_ID && password === CORRECT_PASS) {
         // Store session
-        localStorage.setItem('Echoura_logged_in', 'true');
-        localStorage.setItem('Echoura_student_id', studentId);
+        localStorage.setItem('echoura_logged_in', 'true');
+        localStorage.setItem('echoura_student_id', studentId);
         
         // Success animation
         const loginBtn = document.querySelector('.login-btn');
